@@ -11,7 +11,8 @@ https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-s
 3) **Next, open Docker Desktop App and wait for Docker Engine to initiate.**
 
 4) **In the meanwhile, open Command Prompt in Windows and choose your preferred target directory.**
-The recommended default is C:/Users/NAME 
+
+        The recommended default is C:/Users/NAME 
 
 5) **Drag .zip content to target directory.**
 
@@ -19,5 +20,5 @@ The recommended default is C:/Users/NAME
 
 While container is running, you can access the web application at http://localhost/ and phpMyAdmin at http://localhost:8080. 
 
-Username: root
-Password: password
+    Username: root
+    Password: password
