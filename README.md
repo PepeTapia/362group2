@@ -1,6 +1,6 @@
 Beginning of Group 2 project
 
-How to set up and run PHP-apache webserver, phpMyAdmin, and MYSQL in Docker:
+How to set up and run PHP-apache webserver, phpMyAdmin, and MYSQL in Docker Windows 10:
 
 1) **Download Docker Desktop App.**
 https://www.docker.com/products/docker-desktop
