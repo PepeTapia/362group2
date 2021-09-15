@@ -12,13 +12,13 @@ https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-s
 
 4) **In the meanwhile, open Command Prompt in Windows and choose your preferred target directory.**
 
-        The recommended default is C:/Users/NAME 
+       The recommended default is C:/Users/NAME 
 
-5) **Drag .zip content to target directory.**
+5) **Clone/download demo repository and drag folder content to target directory**
 
 6) **Run "docker-compose up" in Command Prompt and everything should be setting up!**
 
 While container is running, you can access the web application at http://localhost/ and phpMyAdmin at http://localhost:8080. 
-
-    Username: root
-    Password: password
+        
+        Username: root
+        Password: password
