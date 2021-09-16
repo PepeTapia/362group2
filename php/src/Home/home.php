@@ -1,5 +1,5 @@
 <?php
-   include_once '../includes/db.php';
+   include_once '../includes/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -31,15 +31,6 @@
 		<span style="font-size: 30px; cursor: pointer; float: left;" onclick="openNav()">&#9776;</span>
 		 <a href="#default" class="title">Welcome!</a>
 		</div>
-	  
-		<!-- checks if db is connected or not -->
-		<?php
-		if (!$db){
-			die("Connection failed: " . mysqli_connect_error());
-		} else{
-			echo "Connected to MYSQL server successfully!";
-		}
-		?>
 		
 		<!-- button to select and upload file -->
 		<form action="home.php" method="post" enctype="multipart/form-data">

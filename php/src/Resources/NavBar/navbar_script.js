@@ -23,10 +23,13 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.body.style.backgroundColor = "white";
 }
-
 function toHome(){
 	const link = document.getElementById("loginout-link");
 	link.href = '../Home/home.php';
+}
+function toLogin() {
+	const link = document.getElementById("loginout-link");
+	link.href = '../includes/login.php';
 }
 // /* Checks user's login status and sets logout link accordingly */
 // function getLogsStatus() {

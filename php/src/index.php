@@ -20,7 +20,7 @@
                     <p>
                         Sample Text<br> GoBin File Storage
                     </p>
-                    <a  id="loginout-link" href="#" style="text-decoration: none;" onclick="toHome()">Login</a>
+                    <a  id="loginout-link" href="#" style="text-decoration: none;" onclick="toLogin()">Login</a>
                 </div>
             </div>
         </div>
