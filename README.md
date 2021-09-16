@@ -12,7 +12,7 @@ https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-s
 
 4) **In the meanwhile, open Command Prompt in Windows and choose your preferred target directory.**
 
-       The recommended default is C:/Users/NAME 
+       The default is C:/Users/NAME 
 
 5) **Clone/download demo repository and drag folder content to target directory**
 
