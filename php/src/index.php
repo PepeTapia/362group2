@@ -9,7 +9,8 @@
   <script src="Resources/NavBar/navbar_script.js"></script>
 </head>
 
-<body onload="getLogsStatus()">
+<!-- <body onload="getLogsStatus()"> -->
+<body>
   <!-- Top Nav Bar -->
   <div class="topnav">
     <a>GoBin</a>
@@ -24,7 +25,7 @@
           <p>
             Sample Text<br> GoBinCloudStorage or Something
           </p>
-          <a id="loginout-link" href="#" style="text-decoration: none;">Login</a>
+          <a id="loginout-link" href="#" style="text-decoration: none;" onclick="toLogin()" >Login</a>
         </div>
       </div>
     </div>
