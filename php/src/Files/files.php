@@ -6,14 +6,14 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Home</title>
-		<link rel="stylesheet" href="style-home.css"></link>
+		<title>Your Files</title>
+		<link rel="stylesheet" href="style-files.css"></link>
 		<link rel="stylesheet" href="../Resources/NavBar/navbar_style.css"></link>
 		<script src="../Resources/NavBar/navbar_script.js"></script>
 		<script src="https://www.gstatic.com/charts/loader.js"></script>
-		<script src="script-home.js"></script>
+		<script src="script-files.js"></script>
 	</head>
-	<!-- <body onload="getLogsStatus();"> -->
+
 	<body>
 	<!-- Navbar -->
 	<div id="mySidenav" class="sidenav">
@@ -27,20 +27,17 @@
 	</div>
 	<header>
 		<!-- all the content relevant to the header is contained in this div -->
-		<!-- Add welcome pop up when login-->
 		<div class="header">
 		<span style="font-size: 30px; cursor: pointer; float: left;" onclick="openNav()">&#9776;</span>
-		 <a href="#default" class="title">Home</a>
+		 <a href="#default" class="title">File Manager</a>
 		</div>
 		
 		<!-- button to select and upload file -->
-		<div class = "upload_button">
-			<form action="home.php" method="post" enctype="multipart/form-data">
-			<p>Select file to upload:</p>
-			<input type="file" name="file">
-			<input type="submit" value="Upload" name="submit">
-			</form>
-		</div>
+		<form action="home.php" method="post" enctype="multipart/form-data">
+		Select file to upload:
+		<input type="file" name="file">
+		<input type="submit" value="Upload" name="submit">
+		</form>
 	  
 		<!-- file uploading functionality -->
 		<?php 
