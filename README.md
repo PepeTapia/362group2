@@ -6,8 +6,8 @@ Project hosted on Google Cloud.
 - index.php handles redirecting requests.
 
 ## NOTE:
-For **_href_** attributes, you can put just the file name and its type ("test.php") and it should work well in Google Cloud.
+For **_href_** attributes, you can put just the file name and its type ("test.php") and set up what directories the file is in via index.php.
 
 **EXAMPLE:**
 
-![example](https://user-images.githubusercontent.com/55907638/135773216-d807393e-70fd-4ce1-b2f2-88dc7d336587.png)
+![example](https://user-images.githubusercontent.com/55907638/135773345-4fa579a4-65d7-45b6-a6d9-26f998cff46f.png)
