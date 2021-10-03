@@ -25,7 +25,7 @@ function closeNav() {
 }
 function toHome(){
 	const link = document.getElementById("loginout-link");
-	link.href = '../../home.php';
+	link.href = 'home.php';
 }
 function toLogin() {
 	const link = document.getElementById("loginout-link");

@@ -21,13 +21,13 @@
 		<a href="/Compare/compare.html">Compare</a>
 		<a href="#">Contact</a>
 		-->
-		<a id="loginout-link" href="/">Logout</a>
+		<a id="loginout-link" href="intro.php">Logout</a>
 	</div>
 	<header>
 		<!-- all the content relevant to the header is contained in this div -->
 		<div class="header">
 		<span style="font-size: 30px; cursor: pointer; float: left;" onclick="openNav()">&#9776;</span>
-		 <a href="#default" class="title">Welcome!</a>
+		 <a href="home.php" class="title">Welcome!</a>
 		</div>
 		
 		<!-- button to select and upload file -->

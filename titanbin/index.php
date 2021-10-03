@@ -2,16 +2,22 @@
 <?php
 
 switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
+	case '/echo.php':
+		include './resources/test/echo.php';
+		break;
     case '/':
         require 'intro.php';
         break;
-	case '/login':	 
+	case '/intro.php':
+		include 'intro.php';
+		break;
+	case '/login.php':	 
 		include 'login.php';
 		break;
-	case '/signup':
+	case '/signup.php':
 		include 'signup.php';
 		break;
-	case '/home':
+	case '/home.php':
 		include 'home.php';
     default:
         http_response_code(404);
