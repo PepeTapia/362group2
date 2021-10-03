@@ -1,24 +1,11 @@
-Beginning of Group 2 project
+# Iteration 2:
 
-How to set up and run PHP-apache webserver, phpMyAdmin, and MYSQL in Docker Windows 10:
+Project hosted on Google Cloud.
 
-1) **Download Docker Desktop App.**
-https://www.docker.com/products/docker-desktop
+- app.yaml handles static files for website.
+- index.php handles redirecting requests.
 
-2) **Follow Step 1-5 to install WSL & update to WSL 2.**
-https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps
+## **NOTE:**
+The _**href**_ attribute should correspond to the cases in index.php.
 
-3) **Next, open Docker Desktop App and wait for Docker Engine to initiate.**
-
-4) **In the meanwhile, open Command Prompt in Windows and choose your preferred target directory.**
-
-       The default is C:/Users/NAME 
-
-5) **Clone/download demo repository and drag folder content to target directory**
-
-6) **Run "docker-compose up" in Command Prompt and everything should be setting up!**
-
-While container is running, you can access the web application at http://localhost/ and phpMyAdmin at http://localhost:8080. 
-        
-        Username: root
-        Password: password
+**Example:** ![example](https://user-images.githubusercontent.com/55907638/135772510-f7ab5c7b-2532-40d5-b7fe-ef22e01372a2.png)
