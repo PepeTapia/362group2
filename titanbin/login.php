@@ -95,9 +95,9 @@
 
 			<input id="button" type="submit" value="Login"><br><br>
 			
-			<a href="/home"> Home (test)</a> <br><br>
+			<a href="home.php"> Home (test)</a> <br><br>
 
-			<a href="/signup">Click to Signup</a><br><br>
+			<a href="signup.php">Click to Signup</a><br><br>
 		</form>
 	</div>
 </body>

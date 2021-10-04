@@ -77,7 +77,7 @@
 
 			<input id="button" type="submit" value="Signup"><br><br>
 
-			<a href="/login">Click to Login</a><br><br>
+			<a href="login.php">Click to Login</a><br><br>
 		</form>
 	</div>
 </body>

@@ -24,7 +24,7 @@
           <p>
             Welcome!
           </p>
-          <a id="loginout-link" href="/login" style="text-decoration: none;" >Login</a>
+          <a id="loginout-link" href="login.php" style="text-decoration: none;" >Login</a>
         </div>
       </div>
     </div>
