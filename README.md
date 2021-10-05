@@ -9,7 +9,7 @@ Project hosted on Google Cloud and files stored in Google Cloud Storage.
 
 **If you downloaded my .7zip file from Discord and extracted to "C:/Users/name", you just need to follow Step 1, type "cd C:/Users/name/titanbin", and you are good to host!**
 
-1. Download Cloud SDK and initialize GCloud: https://cloud.google.com/sdk/docs/quickstart
+1. Download Cloud SDK installer and initialize GCloud to our project: https://cloud.google.com/sdk/docs/quickstart
 
 2. Clone github and extract titanbin file to "C:/Users/name" 
 
