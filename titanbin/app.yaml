@@ -1,0 +1,27 @@
+runtime: php74 # Replace with php74 to use PHP 7.4
+
+handlers:
+#Serve a directory as a static resource.
+- url: /resources/stylesheets
+  static_dir: resources/stylesheets
+  
+- url: /resources/javascript
+  static_dir: resources/javascript
+  
+# Serve images as static resources.
+- url: /resources/images/(.*\.(ico|jpeg|jpg|png))$
+  static_files: resources/images/\1
+  upload: resources/images/.*\.(ico|jpeg|jpg|png)$
+  
+# - url: /resources/images/(.+\.(png|jpg|ico))$
+  # static_dir: resources/images
+  
+# Serve your app through a front controller at index.php or public/index.php.
+- url: .*
+  script: auto
+  
+entrypoint:
+    serve index.php
+    
+  
+ 
