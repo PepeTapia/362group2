@@ -6,8 +6,11 @@ Project hosted on Google Cloud and files stored in Google Cloud Storage.
 - index.php handles redirecting requests.
 
 ## **SETUP:**
+
+**If you downloaded my .7zip file from Discord and extracted to "C:/Users/name", you just need to follow Step 1, type "cd C:/Users/name/titanbin", and you are good to host!**
+
 1. Download Cloud SDK and initialize GCloud: https://cloud.google.com/sdk/docs/quickstart
-2. Clone github and extract titanbin file to C:/Users/name" 
+2. Clone github and extract titanbin file to "C:/Users/name" 
 3. Type in cmd the following:
 ```  
 "cd C:/Users/name/titanbin"
@@ -15,8 +18,7 @@ Project hosted on Google Cloud and files stored in Google Cloud Storage.
 "compose install" 
 ```
 4. After installation finishes, delete the compose.lock file in titanbin directory
-5. You will also need "keyfile.json" file in titanbin directory to connect to Google Cloud Storage in home.php
-    - This can be downloaded from our Discord
+5. You will also need "keyfile.json" file in titanbin directory to connect to Google Cloud Storage in home.php, which can be downloaded from our Discord.
 7. Now, you can either host locally or type "gcloud app deploy" to host web application to Google Cloud. 
 
 ## **NOTE:**
