@@ -7,7 +7,7 @@ Project hosted on Google Cloud and files stored in Google Cloud Storage.
 
 ## **SETUP:**
 
-**If you downloaded my .7zip file from Discord and extracted to "C:/Users/name", you just need to do Step 1, Step 3, and Step 7**
+**If you downloaded my .7zip file from Discord and extracted to "C:/Users/name", you just need to do Step 1, Step 3, and Step 7.**
 
 1. Download Cloud SDK installer and initialize GCloud to our project: https://cloud.google.com/sdk/docs/quickstart
 
