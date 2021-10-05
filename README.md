@@ -15,8 +15,8 @@ Project hosted on Google Cloud and files stored in Google Cloud Storage.
 "compose install" 
 ```
 4. After installation finishes, delete the compose.lock file in titanbin directory
-5. Download "keyfile.json" authentication file from discord to connect to Cloud Storage in home.php
-6. Now, you can either host locally or type "gcloud app deploy" to host web application to Google Cloud. 
+5. You will also need "keyfile.json" file in your titanbin directory in order to access connection to Google Cloud Storage. This can be downloaded from our Discord.
+7. Now, you can either host locally or type "gcloud app deploy" to host web application to Google Cloud. 
 
 ## **NOTE:**
 For **_href_** attributes, you can put just the file name and its type ("test.php") and set up what directories the file is in via index.php.
