@@ -1,3 +1,37 @@
+<?php
+
+require './vendor/autoload.php';
+
+use Google\Cloud\Storage\StorageClient;
+
+class googleStorage{
+	private $projectId;
+	private $storage;
+	public function __construct(){
+	#	$this->projectId = 'titanbin';
+		$this->projectId = 'nifty-pursuit-326703';
+	#	$this->serviceAccPath = 'keyfile2.json';
+		$this->serviceAccPath = 'keyfile.json';
+		$this->storage = new StorageClient([
+			'keyFilePath' => $this->serviceAccPath,
+			'projectId' => $this->projectId
+		]);
+		$this->storage->registerStreamWrapper();
+	}
+	function upload_object($bucketName, $objectName, $source){
+		$file = fopen($source, 'r');
+		$bucket = $this->storage->bucket($bucketName);
+		$object = $bucket->upload($file, [
+			'name' => $objectName
+		]);
+		printf('Uploaded %s to gs://%s/%s' . PHP_EOL, $objectName, $bucketName, $objectName);
+		#echo "Upload success!";
+	}
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,12 +47,12 @@
 	<!-- Navbar -->
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<img src="../Resources/images/DSA-campaign-white.png" style="max-width: 50%; max-height: 50%; margin-left: auto; margin-right: auto; display: block;"/>
+		<img src="./resources/images/DSA-campaign-white.png" style="max-width: 50%; max-height: 50%; margin-left: auto; margin-right: auto; display: block;"/>
 		<a href="home.php">Home</a>
 		<a href="files.php">Files</a>
 		<a href="trash.php">Rubbish</a>
 		<a href="#">Contact</a>
-		<a id="loginout-link" href="#">Logout</a>
+		<a id="loginout-link" href="login.php">Logout</a>
 	</div>
 	<header>
 		<!-- all the content relevant to the header is contained in this div -->
@@ -37,31 +71,13 @@
 		</div>
 		<!-- file uploading functionality -->
 		<?php 
-		$fileDir = "../uploads/";
+		#	$bucket = "titanbin.appspot.com";
+			$bucket = "titanbin_files";
+			$storage = new googleStorage();
 
-		if (isset($_POST['submit'])) {
-			$file = $_FILES['file'];
-			$fileName = $_FILES['file']['name'];
-			$fileSize = $_FILES['file']['size'];
-			$fileType = $_FILES['file']['type'];
-			$fileTmpName = $_FILES['file']['tmp_name'];
-			$fileError = $_FILES['file']['error'];
-			$fileNameSplit = explode('.', $fileName);
-			$fileExt = strtolower(end($fileNameSplit));
-
-			if($fileError === 0){
-				$fileIDName = uniqid('', true) . "." . $fileExt;
-				$fileLoc = $fileDir . $fileIDName;
-				move_uploaded_file($fileTmpName, $fileLoc);
-				echo "Upload success!";
+			if(isset($_POST['submit'])){
+				$storage->upload_object($bucket, $_FILES['file']['name'], $_FILES['file']['tmp_name']);
 			}
-			else if ($fileError === 1){
-				echo "File is too large. Max is 5MB.";
-			}
-			else{
-				echo "File Error.";
-			}
-		}
 		?>
 	</header>
 	</body>
