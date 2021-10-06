@@ -1,7 +1,3 @@
-<?php
-   include_once '../includes/connection.php';
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>

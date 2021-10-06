@@ -8,7 +8,6 @@
   <script type="text/javascript" src="./resources/javascript/navbar_script.js"></script>
 </head>
 
-<!-- <body onload="getLogsStatus()"> -->
 <body>
   <!-- Top Nav Bar -->
   <div class="topnav">

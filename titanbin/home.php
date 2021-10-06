@@ -9,7 +9,6 @@
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script type="text/javascript" src="./resources/javascript/script-home.js"></script>
 	</head>
-	<!-- <body onload="getLogsStatus();"> -->
 	<body>
 	<!-- Navbar -->
 	<div id="mySidenav" class="sidenav">

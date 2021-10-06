@@ -1,7 +1,3 @@
-<?php
-   include_once '../includes/connection.php';
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,7 +6,6 @@
 		<link type="text/css" rel="stylesheet" href="./resources/stylesheets/style-files.css"></link>
 		<link rel="stylesheet" href="./resources/stylesheets/navbar_style.css"></link>
 		<script type="text/javascript" src="./resources/javascript/navbar_script.js"></script>
-		<script src="https://www.gstatic.com/charts/loader.js"></script>
 		<script src="script-files.js"></script>
 	</head>
 

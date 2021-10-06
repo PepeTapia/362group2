@@ -35,14 +35,6 @@ div.center {
     text-align: center;
 }
 
-/*.upload_button {
-  margin:1% auto;
-	margin-right: auto; 
-  margin-left: auto;
-  width: 21%; 
-	padding-top: 11px;
-}*/
-
 .upload_button {
   text-align: center;
   border: 3px solid #73AD21;
