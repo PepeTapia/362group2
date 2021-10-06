@@ -22,5 +22,6 @@ handlers:
   
 entrypoint:
     serve index.php
+    
   
  

@@ -35,19 +35,10 @@ div.center {
     text-align: center;
 }
 
-.upload_button {
-  text-align: center;
-  border: 3px solid #73AD21;
-  padding: 10px;
-  display: inline-block;
-  margin-left: 41%;
-  margin-right: 35%;
-  margin-top: 10%;
-}
-
 div.select {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
 }
+
