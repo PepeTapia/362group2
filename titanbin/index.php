@@ -21,7 +21,7 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
 		include 'home.php';
     default:
         http_response_code(404);
-		
+        exit('Not Found');
 }
 
 // switch ($_SERVER['REQUEST_URI']) {

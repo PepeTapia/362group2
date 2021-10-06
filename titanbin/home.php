@@ -24,8 +24,8 @@ class googleStorage{
 		$object = $bucket->upload($file, [
 			'name' => $objectName
 		]);
-		printf('Uploaded %s to gs://%s/%s' . PHP_EOL, $objectName, $bucketName, $objectName);
-		#echo "Upload success!";
+		$msg = 'Uploaded ' . $objectName . ' to gs://' .$bucketName;
+		echo '<div class="uploadMsg">' . $msg . '</div>';
 	}
 }
 
@@ -43,20 +43,16 @@ class googleStorage{
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script type="text/javascript" src="./resources/javascript/script-home.js"></script>
 	</head>
-	<!-- <body onload="getLogsStatus();"> -->
 	<body>
 	<!-- Navbar -->
 	<div id="mySidenav" class="sidenav">
-	<!--	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-		<a class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<img src="./resources/images/DSA-campaign-white.png" style="max-width: 50%; max-height: 50%; margin-left: auto; margin-right: auto; display: block;"/>
-		<!--
-		<a href="/home.html">Home</a>
-		<a href="/Create/create.html">Create</a>
-		<a href="/Compare/compare.html">Compare</a>
+		<a href="home.php">Home</a>
+		<a href="files.php">Files</a>
+		<a href="trash.php">Rubbish</a>
 		<a href="#">Contact</a>
-		-->
-		<a id="loginout-link" href="intro.php">Logout</a>
+		<a id="loginout-link" href="login.php">Logout</a>
 	</div>
 	<header>
 		<!-- all the content relevant to the header is contained in this div -->
@@ -66,12 +62,13 @@ class googleStorage{
 		</div>
 		
 		<!-- button to select and upload file -->
-		<form action="home.php" method="post" enctype="multipart/form-data">
-		Select file to upload:
-		<input type="file" name="file">
-		<input type="submit" value="Upload" name="submit">
-		</form>
-	  
+		<div class = "upload_button">
+			<form action="home.php" method="post" enctype="multipart/form-data">
+			<p>Select file to upload:</p>
+			<input type="file" name="file">
+			<input type="submit" value="Upload" name="submit">
+			</form>
+		</div>
 		<!-- file uploading functionality -->
 		<?php 
 		#	$bucket = "titanbin.appspot.com";
@@ -81,36 +78,6 @@ class googleStorage{
 			if(isset($_POST['submit'])){
 				$storage->upload_object($bucket, $_FILES['file']['name'], $_FILES['file']['tmp_name']);
 			}
-
-
-		// // $fileDir = "./uploads/";
-		// if (isset($_POST['submit'])) {
-		// 	$file = $_FILES['file'];
-		// 	$fileName = $_FILES['file']['name'];
-		// 	$fileSize = $_FILES['file']['size'];
-		// 	$fileType = $_FILES['file']['type'];
-		// 	$fileTmpName = $_FILES['file']['tmp_name'];
-		// 	$fileError = $_FILES['file']['error'];
-		// 	$fileNameSplit = explode('.', $fileName);
-		// 	$fileExt = strtolower(end($fileNameSplit));
-
-		// 	if($fileError === 0){
-		// 		$fileIDName = uniqid('', true);
-		// 		$fileIDExt = $fileIDName . "." . $fileExt;
-		// 		// $fileLoc = $fileDir . $fileIDExt;
-		// 		$fileLoc = $fileIDExt;
-		// 		move_uploaded_file($fileTmpName, $fileLoc);
-
-		// 		echo "Upload success! <br>";
-		// 	}
-		// 	else if ($fileError === 1){
-		// 		echo "File is too large. Max is 5MB.";
-		// 	}
-		// 	else{
-		// 		echo "File Error.";
-		// 	}
-		// }
-        
 		?>
 	</header>
 	</body>
