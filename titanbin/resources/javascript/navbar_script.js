@@ -21,7 +21,7 @@ function openNav() {
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  document.body.style.backgroundColor = "white";
+  document.body.style.backgroundColor = "#4F6072";
 }
 function toHome(){
 	const link = document.getElementById("loginout-link");

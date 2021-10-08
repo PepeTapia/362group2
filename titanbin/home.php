@@ -4,14 +4,18 @@ require './vendor/autoload.php';
 
 use Google\Cloud\Storage\StorageClient;
 
+$link = "";
+$link_status ="";
+
 class googleStorage{
 	private $projectId;
 	private $storage;
+	private $serviceAccPath;
 	public function __construct(){
-	#	$this->projectId = 'titanbin';
-		$this->projectId = 'nifty-pursuit-326703';
-	#	$this->serviceAccPath = 'keyfile2.json';
-		$this->serviceAccPath = 'keyfile.json';
+		$this->projectId = 'titanbin';
+	#	$this->projectId = 'nifty-pursuit-326703';
+		$this->serviceAccPath = 'keyfile2.json';
+	#	$this->serviceAccPath = 'keyfile.json';
 		$this->storage = new StorageClient([
 			'keyFilePath' => $this->serviceAccPath,
 			'projectId' => $this->projectId
@@ -27,6 +31,15 @@ class googleStorage{
 		$msg = 'Uploaded ' . $objectName . ' to gs://' .$bucketName;
 		echo '<div class="uploadMsg">' . $msg . '</div>';
 	}
+	// function download_object($bucketName, $objectName, $destination){
+	// 	$bucket = $this->storage->bucket($bucketName);
+	// 	$object = $bucket->object($objectName);
+	// 	$object->downloadToFile($destination);
+	// 	printf('Downloaded gs://%s/%s to %s' . PHP_EOL, $bucketName, $objectName, basename($destination));
+	// }
+	// function getUrl($bucketName, $objectName){
+	// 	return 'https://storage.cloud.google.com/'. $bucketName . '/' . $objectName;
+	// }
 }
 
 
@@ -42,6 +55,13 @@ class googleStorage{
 		<script type="text/javascript" src="./resources/javascript/navbar_script.js"></script>
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script type="text/javascript" src="./resources/javascript/script-home.js"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<link rel="stylesheet" type="text/css" href="./resources/stylesheets/style-upload.css">
+
 	</head>
 	<body>
 	<!-- Navbar -->
@@ -52,7 +72,7 @@ class googleStorage{
 		<a href="files.php">Files</a>
 		<a href="trash.php">Rubbish</a>
 		<a href="#">Contact</a>
-		<a id="loginout-link" href="login.php">Logout</a>
+		<a id="loginout-link" href="intro.php">Logout</a>
 	</div>
 	<header>
 		<!-- all the content relevant to the header is contained in this div -->
@@ -62,23 +82,50 @@ class googleStorage{
 		</div>
 		
 		<!-- button to select and upload file -->
-		<div class = "upload_button">
+		<!-- <div class = "upload_button">
 			<form action="home.php" method="post" enctype="multipart/form-data">
 			<p>Select file to upload:</p>
 			<input type="file" name="file">
 			<input type="submit" value="Upload" name="submit">
 			</form>
-		</div>
+		</div> -->
 		<!-- file uploading functionality -->
-		<?php 
-		#	$bucket = "titanbin.appspot.com";
-			$bucket = "titanbin_files";
-			$storage = new googleStorage();
+		<div class ="file_upload_body">
+			<div class="file__upload">
+				<div class="header">
+					<p><i class="fa fa-cloud-upload fa-2x"></i><span><span>Up</span>Load</span></p>			
+				</div>
+				<form action="" method="POST" enctype="multipart/form-data" class="body">
+					<!-- Shareable Link Code -->
+					<input type="checkbox" id="link_checkbox">
+					<input type="text" value="<?php echo $link; ?>" id="link" readonly>
+					<label for="link_checkbox" style="<?php echo $link_status; ?>">Get Shareable Link</label>
 
-			if(isset($_POST['submit'])){
-				$storage->upload_object($bucket, $_FILES['file']['name'], $_FILES['file']['tmp_name']);
-			}
+					<input type="file" name="file" id="upload" required>
+					<label for="upload">
+						<i class="fa fa-file-text-o fa-3x"></i>
+						<p>
+							<strong>Drag and drop</strong> files here<br>
+							or <span>browse</span> to begin the upload
+						</p>
+					</label>
+					<button name="submit" class="btn">Upload</button>
+					</form>
+			</div>
+		</div>
+
+		<!-- using googleStorage() class and its upload_object function, upload user file to bucket -->
+		<?php 
+				$bucket = "titanbin.appspot.com";
+			#	$bucket = "titanbin_files";
+				$storage = new googleStorage();
+
+				if(isset($_POST['submit'])){
+					$storage->upload_object($bucket, $_FILES['file']['name'], $_FILES['file']['tmp_name']);
+				}
+				#$url = $storage->getUrl($bucket, $_FILES['file']['name']);
 		?>
+
 	</header>
 	</body>
 </html>
