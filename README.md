@@ -5,6 +5,8 @@ Project hosted on Google Cloud and files stored in Google Cloud Storage.
 - app.yaml handles static files for website.
 - index.php handles redirecting requests.
 
+Login system temporarily removed due to issue with App Engine (will be fixed by next iteration).
+
 ## **SETUP:**
 
 **If you downloaded my .7zip file from Discord and extracted to "C:/Users/name", you just need to do Step 1, Step 3, and Step 7.**
