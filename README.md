@@ -1,4 +1,7 @@
+# Iteration 1:
 Beginning of Group 2 project
+
+## Setup
 
 How to set up and run PHP-apache webserver, phpMyAdmin, and MYSQL in Docker Windows 10:
 
