@@ -8,8 +8,8 @@ class googleStorage{
 	private $projectId;
 	private $storage;
 	public function __construct(){
-	#	$this->projectId = 'titanbin';
-		$this->projectId = 'nifty-pursuit-326703';
+		$this->projectId = 'titanbin';
+	#	$this->projectId = 'cloud-site-325604';
 	#	$this->serviceAccPath = 'keyfile2.json';
 		$this->serviceAccPath = 'keyfile.json';
 		$this->storage = new StorageClient([
@@ -40,7 +40,6 @@ class googleStorage{
 		<link type="text/css" rel="stylesheet" href="./resources/stylesheets/style-home.css"></link>
 		<link rel="stylesheet" href="./resources/stylesheets/navbar_style.css"></link>
 		<script type="text/javascript" src="./resources/javascript/navbar_script.js"></script>
-		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script type="text/javascript" src="./resources/javascript/script-home.js"></script>
 	</head>
 	<body>
@@ -71,8 +70,8 @@ class googleStorage{
 		</div>
 		<!-- file uploading functionality -->
 		<?php 
-		#	$bucket = "titanbin.appspot.com";
-			$bucket = "titanbin_files";
+			$bucket = "titanbin.appspot.com";
+		#	$bucket = "cloud-site-325604.appspot.com";
 			$storage = new googleStorage();
 
 			if(isset($_POST['submit'])){
