@@ -14,7 +14,7 @@ class googleStorage{
 	public function __construct(){
 		$this->projectId = 'titanbin';
 	#	$this->projectId = 'nifty-pursuit-326703';
-		$this->serviceAccPath = 'keyfile2.json';
+		$this->serviceAccPath = 'keyfile.json';
 	#	$this->serviceAccPath = 'keyfile.json';
 		$this->storage = new StorageClient([
 			'keyFilePath' => $this->serviceAccPath,
