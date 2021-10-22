@@ -1,3 +1,6 @@
+Ramiro's Iteration 2: Changed Login Page, Changed Intro Page, and changed home page (not a part of the iteration 2 as we decided to go with chandler's home.php)
+
+
 # Iteration 2:
 
 Project hosted on Google Cloud and files stored in Google Cloud Storage.
