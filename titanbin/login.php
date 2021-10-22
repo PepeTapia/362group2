@@ -49,11 +49,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link type="text/css" rel="stylesheet" href="./resources/stylesheets/style-login.css" />
 	<title>Login</title>
 </head>
 <body>
-
-	<style type="text/css">
+	<!-- <style type="text/css">
 	
 	#text{
 
@@ -75,20 +75,25 @@
 
 	#box{
 
-		background-color: grey;
+		background-color:  rgb(136, 199, 204);
 		margin: auto;
 		width: 300px;
 		padding: 20px;
 	}
 
-	</style>
 
+
+	</style> -->
+
+<div class="topnav">
+    <a>TitanBin</a>
+  </div>
 	<div id="box">
 		
 		<form method="post">
 			<!--<div style="font-size: 20px;margin: 10px;color: white;">Login</div> -->
 			
-			<div style="font-size: 20px;margin: 10px;color: white;">Login</div>
+			<div style="font-size: 20px;margin: 10px;color: beige;">Enter User & Password</div>
 			
 			<input id="text" type="text" name="user_name"><br><br>
 			<input id="text" type="password" name="password"><br><br>

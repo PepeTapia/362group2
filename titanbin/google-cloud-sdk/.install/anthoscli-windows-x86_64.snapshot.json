@@ -1,0 +1,42 @@
+{
+  "components": [
+    {
+      "data": {
+        "contents_checksum": "38f8e51912949369c7e6193ca49d6747bc06094bc2fe5a75fe26f74a9e9f6611",
+        "source": "",
+        "type": "tar"
+      },
+      "dependencies": [
+        "anthoscli"
+      ],
+      "details": {
+        "description": "The cli for Anthos infrastructure.",
+        "display_name": "anthoscli"
+      },
+      "id": "anthoscli-windows-x86_64",
+      "is_configuration": false,
+      "is_hidden": true,
+      "is_required": false,
+      "platform": {
+        "architectures": [
+          "x86_64"
+        ],
+        "operating_systems": [
+          "WINDOWS"
+        ]
+      },
+      "platform_required": false,
+      "version": {
+        "build_number": 20210827135444,
+        "version_string": "0.2.20"
+      }
+    }
+  ],
+  "revision": 20211004160453,
+  "schema_version": {
+    "no_update": false,
+    "url": "https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.tar.gz",
+    "version": 3
+  },
+  "version": "360.0.0"
+}

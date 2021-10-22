@@ -58,15 +58,15 @@ class googleStorage{
 		<!-- all the content relevant to the header is contained in this div -->
 		<div class="header">
 		<span style="font-size: 30px; cursor: pointer; float: left;" onclick="openNav()">&#9776;</span>
-		 <a href="home.php" class="title">Welcome!</a>
+		 <a href="home.php" class="title">Welcome (username placeholder)!</a>
 		</div>
 		
 		<!-- button to select and upload file -->
 		<div class = "upload_button">
 			<form action="home.php" method="post" enctype="multipart/form-data">
 			<p>Select file to upload:</p>
-			<input type="file" name="file">
-			<input type="submit" value="Upload" name="submit">
+			<input type="file" name="file" class="btn">
+			<input type="submit" value="Upload" name="submit" class="btn">
 			</form>
 		</div>
 		<!-- file uploading functionality -->

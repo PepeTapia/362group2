@@ -7,7 +7,7 @@
 
 .header a {
   float: left;
-  color: black;
+  color: beige;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -37,13 +37,44 @@ div.center {
 
 .upload_button {
   text-align: center;
-  border: 3px solid #73AD21;
+  border: 3px solid #F5F5DC;
   padding: 10px;
   display: inline-block;
   margin-left: 41%;
   margin-right: 35%;
   margin-top: 10%;
+  background-color: rgb(136, 199, 204);
+
 }
+.btn {
+  background: #11cdd4;
+  background-image: -webkit-linear-gradient(top, #11cdd4, #1199e);
+  background-image: -moz-linear-gradient(top, #11cdd4, #1199e);
+  background-image: -ms-linear-gradient(top, #11cdd4, #1199e);
+  background-image: -o-linear-gradient(top, #11cdd4, #1199e);
+  background-image: linear-gradient(to bottom, #11cdd4, #1199e);
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 9px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #30e3cb;
+  background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+  text-decoration: none;
+}
+
+
+
 
 div.select {
     display: inline-block;
@@ -51,3 +82,8 @@ div.select {
     margin-right: auto;
     padding: 30px;
 }
+
+.title{
+  color: beige;
+}
+

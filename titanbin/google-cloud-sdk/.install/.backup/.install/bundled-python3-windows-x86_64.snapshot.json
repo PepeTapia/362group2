@@ -1,0 +1,43 @@
+{
+  "components": [
+    {
+      "data": {
+        "contents_checksum": "df4e8a53c410fc3ba61d32f3de04e435d790a5b413f5eb9ee1607d6cc09b8e30",
+        "source": "",
+        "type": "tar"
+      },
+      "dependencies": [
+        "bundled-python3",
+        "core"
+      ],
+      "details": {
+        "description": "Provides stand-alone Python 3.7 install.",
+        "display_name": "Bundled Python 3.7"
+      },
+      "id": "bundled-python3-windows-x86_64",
+      "is_configuration": false,
+      "is_hidden": true,
+      "is_required": false,
+      "platform": {
+        "architectures": [
+          "x86_64"
+        ],
+        "operating_systems": [
+          "WINDOWS"
+        ]
+      },
+      "platform_required": false,
+      "version": {
+        "build_number": 20211004160453,
+        "version_string": "3.7.9"
+      }
+    }
+  ],
+  "revision": 20211004160453,
+  "schema_version": {
+    "no_update": false,
+    "url": "https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.tar.gz",
+    "version": 3
+  },
+  "version": "360.0.0"
+}
