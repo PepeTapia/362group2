@@ -5,9 +5,9 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
 	case '/echo.php':
 		include './resources/test/echo.php';
 		break;
-    case '/':
-        require 'intro.php';
-        break;
+    	case '/':
+		include 'intro.php';
+		break;
 	case '/intro.php':
 		include 'intro.php';
 		break;
