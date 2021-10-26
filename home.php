@@ -1,47 +1,21 @@
 <?php
 
-require './vendor/autoload.php';
-
-use Google\Cloud\Storage\StorageClient;
+include 'googleStorage.php';
 
 $link = "";
-$link_status ="";
+$link_status ="display: none;";
 
-class googleStorage{
-	private $projectId;
-	private $storage;
-	private $serviceAccPath;
-	public function __construct(){
-		$this->projectId = 'titanbin';
-	#	$this->projectId = 'nifty-pursuit-326703';
-		$this->serviceAccPath = 'keyfile.json';
-	#	$this->serviceAccPath = 'keyfile.json';
-		$this->storage = new StorageClient([
-			'keyFilePath' => $this->serviceAccPath,
-			'projectId' => $this->projectId
-		]);
-		$this->storage->registerStreamWrapper();
-	}
-	function upload_object($bucketName, $objectName, $source){
-		$file = fopen($source, 'r');
-		$bucket = $this->storage->bucket($bucketName);
-		$object = $bucket->upload($file, [
-			'name' => $objectName
-		]);
-		$msg = 'Uploaded ' . $objectName . ' to gs://' .$bucketName;
-		echo '<div class="uploadMsg">' . $msg . '</div>';
-	}
-	// function download_object($bucketName, $objectName, $destination){
-	// 	$bucket = $this->storage->bucket($bucketName);
-	// 	$object = $bucket->object($objectName);
-	// 	$object->downloadToFile($destination);
-	// 	printf('Downloaded gs://%s/%s to %s' . PHP_EOL, $bucketName, $objectName, basename($destination));
-	// }
-	// function getUrl($bucketName, $objectName){
-	// 	return 'https://storage.cloud.google.com/'. $bucketName . '/' . $objectName;
-	// }
-}
+// using googleStorage() class and its upload_object function, upload user file to bucket
 
+	$bucket = "titanbin.appspot.com";
+#	$bucket = "titanbin_files";
+	$storage = new googleStorage();
+
+	if(isset($_POST['submit'])){
+		$storage->upload_object($bucket, $_FILES['file']['name'], $_FILES['file']['tmp_name']);
+		$link_status = "display: block;";
+		$link = $storage->getUrl($bucket, $_FILES['file']['name']);
+	}
 
 ?>
 
@@ -110,22 +84,9 @@ class googleStorage{
 						</p>
 					</label>
 					<button name="submit" class="btn">Upload</button>
-					</form>
+				</form>
 			</div>
 		</div>
-
-		<!-- using googleStorage() class and its upload_object function, upload user file to bucket -->
-		<?php 
-				$bucket = "titanbin.appspot.com";
-			#	$bucket = "titanbin_files";
-				$storage = new googleStorage();
-
-				if(isset($_POST['submit'])){
-					$storage->upload_object($bucket, $_FILES['file']['name'], $_FILES['file']['tmp_name']);
-				}
-				#$url = $storage->getUrl($bucket, $_FILES['file']['name']);
-		?>
-
 	</header>
 	</body>
 </html>
