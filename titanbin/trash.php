@@ -16,8 +16,9 @@
 		<a href="home.php">Home</a>
 		<a href="files.php">Files</a>
 		<a href="trash.php">Rubbish</a>
-		<a href="#">Contact</a>
-		<a id="loginout-link" href="login.php">Logout</a>
+		<a href="#54">Contact</a>
+		<a id="loginout-link" href="#">Logout</a>
+
 	</div>
 	<header>
 		<!-- all the content relevant to the header is contained in this div -->

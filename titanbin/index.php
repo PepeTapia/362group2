@@ -19,6 +19,13 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
 		break;
 	case '/home.php':
 		include 'home.php';
+		break;
+	case '/files.php':
+		include 'files.php';
+		break;
+	case '/trash.php':
+		include 'trash.php';
+		break;
     default:
         http_response_code(404);
         exit('Not Found');
