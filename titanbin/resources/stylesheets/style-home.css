@@ -25,6 +25,7 @@ body {
   font-family: Arial;
   font-size: 17px;
   margin: 0;
+  
 }
 
 h3.center{
@@ -35,14 +36,18 @@ div.center {
     text-align: center;
 }
 
+.msg {
+	text-align:center;
+}
+
 .upload_button {
-  text-align: center;
-  border: 3px solid #73AD21;
-  padding: 10px;
-  display: inline-block;
-  margin-left: 41%;
-  margin-right: 35%;
-  margin-top: 10%;
+	text-align: center;
+	border: 3px solid #73AD21;
+	padding: 10px;
+	display: inline-block;
+	margin-left: 41%;
+	margin-right: 35%;
+	margin-top: 10%;
 }
 
 div.select {
