@@ -45,9 +45,6 @@ class googleStorage{
 	}
 
 	function list_objects_with_prefix($bucketName, $directoryPrefix){
-    	$bucketName = 'cloud-site-325604.appspot.com';
-    	$directoryPrefix = 'myDirectory/';
-
 		$files = array();
 
     	$storage = new StorageClient();
@@ -67,3 +64,10 @@ class googleStorage{
 }
 
 ?>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="./resources/stylesheets/style-home.css"></link>
+	</head>
+</html>
