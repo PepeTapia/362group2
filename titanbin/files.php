@@ -1,44 +1,6 @@
 <?php
-require './vendor/autoload.php';
 
-use Google\Cloud\Storage\StorageClient;
-
-class googleStorage{
-	private $projectId;
-	private $storage;
-	public function __construct(){
-		$this->projectId = 'titanbin';
-	#	$this->projectId = 'cloud-site-325604';
-	#	$this->serviceAccPath = 'keyfile2.json';
-		$this->serviceAccPath = 'keyfile.json';
-		$this->storage = new StorageClient([
-			'keyFilePath' => $this->serviceAccPath,
-			'projectId' => $this->projectId
-		]);
-		$this->storage->registerStreamWrapper();
-	}
-
-	function list_objects_with_prefix($bucketName, $directoryPrefix){
-    	$bucketName = 'cloud-site-325604.appspot.com';
-    	$directoryPrefix = 'myDirectory/';
-
-		$files = array();
-
-    	$storage = new StorageClient();
-    	$bucket = $storage->bucket($bucketName);
-    	$options = ['prefix' => $directoryPrefix];
-    	foreach ($bucket->objects($options) as $object) {
-			$info = $object->info();
-
-			printf('Object: %s' . PHP_EOL, $info['size']);
-			printf('Object: %s' . PHP_EOL, $object->name());
-
-
-        	printf('Object: %s' . PHP_EOL, $info['contentType']);
-			printf('Object: %s' . PHP_EOL, $info['updated']);
-    	}
-	}
-}
+include 'googleStorage.php';
 
 ?>
 
