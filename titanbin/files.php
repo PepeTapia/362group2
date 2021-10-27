@@ -60,22 +60,24 @@ include 'googleStorage.php';
                 <th>Name</th>
                 <th>Size</th>
                 <th>Modified</th>
+				<th>ContentType</th>
                 <th>Actions</th>
             </tr>
             </thead>
+		<tbody>
+			<?php 
+			#		$bucket = "titanbin.appspot.com";
+				$bucketName = "cloud-site-325604.appspot.com";
+				$storage = new googleStorage();
+				$directoryPrefix = 'myDirectory/';
+			
+				$storage->list_objects_with_prefix($bucketName, $directoryPrefix);
+			
+			?>
+		
+    	</tbody>
         </table>
     </div>
-	</form>
-
-	<?php 
-			$bucket = "titanbin.appspot.com";
-		#	$bucket = "cloud-site-325604.appspot.com";
-			$storage = new googleStorage();
-			$dPrefix = 'myDirectory/';
-			
-			$storage->list_objects_with_prefix($bucket, $dPrefix);
-			
-		?>
 
 	</body>
 </html>
