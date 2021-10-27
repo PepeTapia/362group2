@@ -46,7 +46,7 @@ class googleStorage{
 	}
 
 	function list_objects_with_prefix($bucketName, $directoryPrefix){
-    	$bucket = "titanbin.appspot.com";
+    	$bucketname = "titanbin.appspot.com";
 		#$bucketName = 'cloud-site-325604.appspot.com';
     	$directoryPrefix = 'myDirectory/';
 
