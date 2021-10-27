@@ -6,7 +6,7 @@ use Google\Cloud\Storage\StorageClient;
 
 $link = "";
 $link_status ="display: none;";
-$foobar = array();
+$object_array = array();
 
 class googleStorage{
 	private $projectId;
@@ -46,18 +46,17 @@ class googleStorage{
 	}
 
 	function list_objects_with_prefix($bucketName, $directoryPrefix){
-    	$bucketName = 'cloud-site-325604.appspot.com';
+    	$bucket = "titanbin.appspot.com";
+		#$bucketName = 'cloud-site-325604.appspot.com';
     	$directoryPrefix = 'myDirectory/';
-
-		//$files = array();
 
     	$storage = new StorageClient();
     	$bucket = $storage->bucket($bucketName);
     	$options = ['prefix' => $directoryPrefix];
 		
-		$foobar = $bucket->objects($options);
+		$object_array = $bucket->objects($options);
 
-		foreach ($foobar as $object) {
+		foreach ($object_array as $object) {
 			$info = $object->info();
 			echo '<tr>';
 

@@ -66,8 +66,8 @@ include 'googleStorage.php';
             </thead>
 		<tbody>
 			<?php 
-			#		$bucket = "titanbin.appspot.com";
-				$bucketName = "cloud-site-325604.appspot.com";
+				$bucket = "titanbin.appspot.com";
+			#	$bucketName = "cloud-site-325604.appspot.com";
 				$storage = new googleStorage();
 				$directoryPrefix = 'myDirectory/';
 			
