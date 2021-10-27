@@ -1,58 +1,6 @@
 <?php
-require './vendor/autoload.php';
 
-use Google\Cloud\Storage\StorageClient;
-
-$foobar = array();
-
-class googleStorage{
-	private $projectId;
-	private $storage;
-	public function __construct(){
-	#	$this->projectId = 'titanbin';
-		$this->projectId = 'cloud-site-325604';
-	#	$this->serviceAccPath = 'keyfile2.json';
-		$this->serviceAccPath = 'keyfile.json';
-		$this->storage = new StorageClient([
-			'keyFilePath' => $this->serviceAccPath,
-			'projectId' => $this->projectId
-		]);
-		$this->storage->registerStreamWrapper();
-	}
-
-	function list_objects_with_prefix($bucketName, $directoryPrefix){
-    	$bucketName = 'cloud-site-325604.appspot.com';
-    	$directoryPrefix = 'myDirectory/';
-
-		//$files = array();
-
-    	$storage = new StorageClient();
-    	$bucket = $storage->bucket($bucketName);
-    	$options = ['prefix' => $directoryPrefix];
-		
-		$foobar = $bucket->objects($options);
-
-		foreach ($foobar as $object) {
-			$info = $object->info();
-			echo '<tr>';
-
-			echo '<th style="width:3%" class="custom-checkbox-header">';
-			echo '<div class="custom-control custom-checkbox">';
-			echo '<input type="checkbox" class="custom-control-input" id="js-select-all-items" onclick="checkbox_toggle()">';
-			echo '<label class="custom-control-label" for="js-select-all-items"></label>';
-			echo '</div>';
-			echo '</th>';
-			
-			echo '<td>'.$object->name().'</td>';
-			echo '<td>'.$info['size'].'</td>';
-			echo '<td>'.$info['updated'].'</td>';
-			echo '<td>'.$info['contentType'].'</td>';
-			echo '<td>'."Temp for Actions".'</td>';
-			echo '</tr>';
-    	}
-
-	}
-}
+include 'googleStorage.php';
 
 ?>
 
@@ -76,7 +24,7 @@ class googleStorage{
 	<!-- Navbar -->
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<img src="../Resources/images/DSA-campaign-white.png" style="max-width: 50%; max-height: 50%; margin-left: auto; margin-right: auto; display: block;"/>
+		<img src="./resources/images/DSA-campaign-white.png" style="max-width: 50%; max-height: 50%; margin-left: auto; margin-right: auto; display: block;"/>
 		<a href="home.php">Home</a>
 		<a href="files.php">Files</a>
 		<a href="trash.php">Rubbish</a>
@@ -112,27 +60,22 @@ class googleStorage{
                 <th>Name</th>
                 <th>Size</th>
                 <th>Modified</th>
-				<th>ContentType</th>
                 <th>Actions</th>
             </tr>
             </thead>
-		<tbody>
-			<?php 
-			#		$bucket = "titanbin.appspot.com";
-				$bucketName = "cloud-site-325604.appspot.com";
-				$storage = new googleStorage();
-				$directoryPrefix = 'myDirectory/';
-			
-				$storage->list_objects_with_prefix($bucketName, $directoryPrefix);
-			
-			?>
-		
-    	</tbody>
         </table>
     </div>
 	</form>
 
-	
+	<?php 
+			$bucket = "titanbin.appspot.com";
+		#	$bucket = "cloud-site-325604.appspot.com";
+			$storage = new googleStorage();
+			$dPrefix = 'myDirectory/';
+			
+			$storage->list_objects_with_prefix($bucket, $dPrefix);
+			
+		?>
 
 	</body>
 </html>
