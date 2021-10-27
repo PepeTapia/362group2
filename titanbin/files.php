@@ -3,12 +3,14 @@ require './vendor/autoload.php';
 
 use Google\Cloud\Storage\StorageClient;
 
+$foobar = array();
+
 class googleStorage{
 	private $projectId;
 	private $storage;
 	public function __construct(){
-		$this->projectId = 'titanbin';
-	#	$this->projectId = 'cloud-site-325604';
+	#	$this->projectId = 'titanbin';
+		$this->projectId = 'cloud-site-325604';
 	#	$this->serviceAccPath = 'keyfile2.json';
 		$this->serviceAccPath = 'keyfile.json';
 		$this->storage = new StorageClient([
@@ -22,21 +24,33 @@ class googleStorage{
     	$bucketName = 'cloud-site-325604.appspot.com';
     	$directoryPrefix = 'myDirectory/';
 
-		$files = array();
+		//$files = array();
 
     	$storage = new StorageClient();
     	$bucket = $storage->bucket($bucketName);
     	$options = ['prefix' => $directoryPrefix];
-    	foreach ($bucket->objects($options) as $object) {
+		
+		$foobar = $bucket->objects($options);
+
+		foreach ($foobar as $object) {
 			$info = $object->info();
+			echo '<tr>';
 
-			printf('Object: %s' . PHP_EOL, $info['size']);
-			printf('Object: %s' . PHP_EOL, $object->name());
-
-
-        	printf('Object: %s' . PHP_EOL, $info['contentType']);
-			printf('Object: %s' . PHP_EOL, $info['updated']);
+			echo '<th style="width:3%" class="custom-checkbox-header">';
+			echo '<div class="custom-control custom-checkbox">';
+			echo '<input type="checkbox" class="custom-control-input" id="js-select-all-items" onclick="checkbox_toggle()">';
+			echo '<label class="custom-control-label" for="js-select-all-items"></label>';
+			echo '</div>';
+			echo '</th>';
+			
+			echo '<td>'.$object->name().'</td>';
+			echo '<td>'.$info['size'].'</td>';
+			echo '<td>'.$info['updated'].'</td>';
+			echo '<td>'.$info['contentType'].'</td>';
+			echo '<td>'."Temp for Actions".'</td>';
+			echo '</tr>';
     	}
+
 	}
 }
 
@@ -98,22 +112,27 @@ class googleStorage{
                 <th>Name</th>
                 <th>Size</th>
                 <th>Modified</th>
+				<th>ContentType</th>
                 <th>Actions</th>
             </tr>
             </thead>
+		<tbody>
+			<?php 
+			#		$bucket = "titanbin.appspot.com";
+				$bucketName = "cloud-site-325604.appspot.com";
+				$storage = new googleStorage();
+				$directoryPrefix = 'myDirectory/';
+			
+				$storage->list_objects_with_prefix($bucketName, $directoryPrefix);
+			
+			?>
+		
+    	</tbody>
         </table>
     </div>
 	</form>
 
-	<?php 
-			$bucket = "titanbin.appspot.com";
-		#	$bucket = "cloud-site-325604.appspot.com";
-			$storage = new googleStorage();
-			$dPrefix = 'myDirectory/';
-			
-			$storage->list_objects_with_prefix($bucket, $dPrefix);
-			
-		?>
+	
 
 	</body>
 </html>
