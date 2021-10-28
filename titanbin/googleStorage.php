@@ -6,6 +6,7 @@ use Google\Cloud\Storage\StorageClient;
 
 $link = "";
 $link_status ="display: none;";
+$object_array = array();
 
 class googleStorage{
 	private $projectId;
@@ -45,22 +46,36 @@ class googleStorage{
 	}
 
 	function list_objects_with_prefix($bucketName, $directoryPrefix){
-		$files = array();
+ #    	$bucketname = "titanbin.appspot.com";
+ 		#$bucketName = 'cloud-site-325604.appspot.com';
+#    	$directoryPrefix = 'myDirectory/';
 
     	$storage = new StorageClient();
     	$bucket = $storage->bucket($bucketName);
     	$options = ['prefix' => $directoryPrefix];
-    	foreach ($bucket->objects($options) as $object) {
+		
+		$object_array = $bucket->objects($options);
+
+		foreach ($object_array as $object) {
 			$info = $object->info();
+			echo '<tr>';
 
-			printf('Object: %s' . PHP_EOL, $info['size']);
-			printf('Object: %s' . PHP_EOL, $object->name());
-
-
-        	printf('Object: %s' . PHP_EOL, $info['contentType']);
-			printf('Object: %s' . PHP_EOL, $info['updated']);
+			echo '<th style="width:3%" class="custom-checkbox-header">';
+			echo '<div class="custom-control custom-checkbox">';
+			echo '<input type="checkbox" class="custom-control-input" id="js-select-all-items" onclick="checkbox_toggle()">';
+			echo '<label class="custom-control-label" for="js-select-all-items"></label>';
+			echo '</div>';
+			echo '</th>';
+			
+			echo '<td>'.$object->name().'</td>';
+			echo '<td>'.$info['size'].'</td>';
+			echo '<td>'.$info['updated'].'</td>';
+			echo '<td>'.$info['contentType'].'</td>';
+			echo '<td>'."Temp for Actions".'</td>';
+			echo '</tr>';
     	}
-	}	
+
+	}
 }
 
 ?>
