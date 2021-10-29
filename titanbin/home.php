@@ -85,8 +85,38 @@ $link_status ="display: none;";
 					</label>
 					<button name="submit" class="btn">Upload</button>
 				</form>
+				<div class="image-preview" id="imagePreview">
+					<img src = "" alt="Image Preview" class="image-preview__image">
+					<span class="image-preview__deault-text"><!--Image Preview--></span>
+				</div>
 			</div>
 		</div>
 	</header>
+
+	<script>
+		const upload = document.getElementById("upload");
+		const previewContainer = document.getElementById("imagePreview");
+		const previewImage = previewContainer.querySelector(".image-preview__image");
+		const previewDefaultText = previewContainer.querySelector(".image-preview__default-text");
+
+		upload.addEventListener("change", function(){
+			const file = this.files[0];
+			
+			if (file) {
+				const reader = new FileReader();
+
+				// previewDefaultText.style.display = "none";
+				previewImage.style.display = "block";
+				
+				reader.addEventListener("load", function() {
+					console.log(this);
+					previewImage.setAttribute("src", this.result);
+				});
+				reader.readAsDataURL(file);
+			}
+
+		});
+
+	</script>
 	</body>
 </html>

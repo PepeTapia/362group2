@@ -23,15 +23,15 @@ handlers:
 entrypoint:
     serve index.php
     
-#env_variables:
-#  CLOUD_SQL_USERNAME: root
-#  CLOUD_SQL_PASSWORD: Pwj0L5v5mrHv77d5
-#  CLOUD_SQL_DATABASE_NAME: login
-#  CLOUD_SQL_CONNECTION_NAME: titanbin:us-west2:titanbinusers
-#  CLOUD_SQL_HOST: 10.16.176.2
+env_variables:
+  CLOUD_SQL_USERNAME: root
+  CLOUD_SQL_PASSWORD: Pwj0L5v5mrHv77d5
+  CLOUD_SQL_DATABASE_NAME: login
+  CLOUD_SQL_CONNECTION_NAME: titanbin:us-west2:titanbinusers
+  CLOUD_SQL_HOST: 10.16.176.2
 
-#vpc_access_connector:
-#  name: "projects/titanbin/locations/us-west2/connectors/titanbinconnector"
+vpc_access_connector:
+  name: "projects/titanbin/locations/us-west2/connectors/titanbinconnector"
     
   
  

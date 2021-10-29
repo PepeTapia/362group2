@@ -15,6 +15,9 @@
   </div>
   <!-- Login Element -->
 
+
+  <div class="background-pic"></div>
+
   <div style="padding-left:16px">
     <div class="display-middle" style="white-space:nowrap;">
       <div class="headline-animate-opacity">
