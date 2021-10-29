@@ -49,51 +49,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link type="text/css" rel="stylesheet" href="./resources/stylesheets/style-login.css" />
 	<title>Login</title>
 </head>
 <body>
-
-	<style type="text/css">
+	<!-- <style type="text/css">
 	
 	#text{
-
 		height: 25px;
 		border-radius: 5px;
 		padding: 4px;
 		border: solid thin #aaa;
 		width: 100%;
 	}
-
 	#button{
-
 		padding: 10px;
 		width: 100px;
 		color: white;
 		background-color: lightblue;
 		border: none;
 	}
-
 	#box{
-
-		background-color: grey;
+		background-color:  rgb(136, 199, 204);
 		margin: auto;
 		width: 300px;
 		padding: 20px;
 	}
+	</style> -->
 
-	</style>
-
+<div class="topnav">
+    <a>TitanBin</a>
+  </div>
 	<div id="box">
-		
+
 		<form method="post">
-			<div style="font-size: 20px;margin: 10px;color: white;">Login</div>
+			<!--<div style="font-size: 20px;margin: 10px;color: white;">Login</div> -->
+
+			<div style="font-size: 20px;margin: 10px;color: beige;">Enter User & Password</div>
 
 			<input id="text" type="text" name="user_name"><br><br>
 			<input id="text" type="password" name="password"><br><br>
 
 			<input id="button" type="submit" value="Login"><br><br>
 
+			<a href="home.php"> Home (test)</a> <br><br>
+
 			<a href="signup.php">Click to Signup</a><br><br>
+
+			<a href="contactus.php">Contact Us</a><br><br>
 		</form>
 	</div>
 </body>

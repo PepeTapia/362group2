@@ -16,8 +16,8 @@
 		<a href="home.php">Home</a>
 		<a href="files.php">Files</a>
 		<a href="trash.php">Rubbish</a>
-		<a href="#54">Contact</a>
-		<a id="loginout-link" href="login.php">Logout</a>
+		<a href="contact.php">Contact</a>
+		<a id="loginout-link" href="intro.php">Logout</a>
 
 	</div>
 	<header>

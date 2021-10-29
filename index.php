@@ -23,6 +23,8 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
 	case '/files.php':
 		include 'files.php';
 		break;
+	case '/contact.php':
+		include 'contactus.php';
     default:
         http_response_code(404);
 }

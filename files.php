@@ -1,6 +1,6 @@
 <?php
 
-include 'googleStorage.php';
+include 'class.php';
 
 ?>
 
@@ -28,8 +28,8 @@ include 'googleStorage.php';
 		<a href="home.php">Home</a>
 		<a href="files.php">Files</a>
 		<a href="trash.php">Rubbish</a>
-		<a href="#">Contact</a>
-		<a id="loginout-link" href="login.php">Logout</a>
+		<a href="contact.php">Contact</a>
+		<a id="loginout-link" href="intro.php">Logout</a>
 	</div>
 
 	<header>
@@ -60,22 +60,23 @@ include 'googleStorage.php';
                 <th>Name</th>
                 <th>Size</th>
                 <th>Modified</th>
+				<th>ContentType</th>
                 <th>Actions</th>
             </tr>
             </thead>
+		<tbody>
+			<?php 
+				$bucketName = "test3928103";
+			#	$bucketName = "cloud-site-325604.appspot.com";
+				$storage = new googleStorage();
+			#	$directoryPrefix = 'myDirectory/';
+			
+				$storage->list_objects($bucketName);
+			?>
+		
+    	</tbody>
         </table>
     </div>
-	</form>
-
-	<?php 
-			$bucket = "titanbin.appspot.com";
-		#	$bucket = "cloud-site-325604.appspot.com";
-			$storage = new googleStorage();
-			$dPrefix = 'myDirectory/';
-			
-			$storage->list_objects_with_prefix($bucket, $dPrefix);
-			
-		?>
 
 	</body>
 </html>

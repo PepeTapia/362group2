@@ -7,7 +7,7 @@
 
 .header a {
   float: left;
-  color: black;
+  color: beige;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -36,7 +36,7 @@ div.center {
     text-align: center;
 }
 
-.uploadMsg {
+.msg {
 	text-align:center;
 }
 
@@ -55,4 +55,28 @@ div.select {
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
+}
+
+.image-preview{
+  width: 400px;
+  min-height:100px;
+  /* border: 2px solid #dddddd; */
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color:#cccccc;
+}
+
+.image-preview__image{
+  display: none;
+  width: 100%;
+
+}
+
+.file__upload{
+  position: relative;
+  bottom: 100px;
 }

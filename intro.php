@@ -15,6 +15,8 @@
   </div>
   <!-- Login Element -->
 
+  <div class="background-pic"></div>
+
   <div style="padding-left:16px">
     <div class="display-middle" style="white-space:nowrap;">
       <div class="headline-animate-opacity">
@@ -23,7 +25,7 @@
           <p>
             Welcome!
           </p>
-          <a id="loginout-link" href="login.php" style="text-decoration: none;" >Login</a>
+          <a id="loginout-link" href="home.php" style="text-decoration: none;" >Login</a>
         </div>
       </div>
     </div>

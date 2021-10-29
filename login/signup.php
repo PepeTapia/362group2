@@ -39,7 +39,7 @@
 <body>
 
 	<style type="text/css">
-	
+
 	#text{
 
 		height: 25px;
@@ -69,7 +69,7 @@
 	</style>
 
 	<div id="box">
-		
+
 		<form method="post">
 			<div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
 
