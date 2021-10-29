@@ -8,7 +8,7 @@ Brandon:
 
 Ramiro: 
 - Added Contact Us Form
-- Added Image Preview when upload picture
+- Added Image Preview when uploading picture
 - Styled website a little bit
 - working on streamlining code, new website look, and getting contact Us form to work correctly
 - my code for this iteration can be viewed in the branch: Ramiro-Iteration3 
