@@ -6,6 +6,12 @@ Brandon:
 - added shareable link
 - working on download button functionality
 
+Ramiro: 
+- Added Contact Us Form
+- Added Image Preview when upload picture
+- Styled website a little bit
+- working on streamlining code, new website look, and getting contact Us form to work correctly
+
 
 ## **SETUP:**
 
