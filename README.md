@@ -1,6 +1,10 @@
 # Iteration 3:
 ### **List of things done:**
-- fixed login system (Brandon)
+Brandon:
+- fixed login system
+- disabled login system due to changing database
+- added shareable link
+- working on download button functionality
 
 
 ## **SETUP:**
