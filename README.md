@@ -14,6 +14,8 @@ Ramiro:
 - my code for this iteration can be viewed in the branch: Ramiro-Iteration3 
 
 
+Login system is disabled currently until we either switch to Firestore or relaunch CloudSQL
+
 ## **SETUP:**
 
 **If you downloaded my .7zip file from Discord and extracted to "C:/Users/name", you just need to do Step 1, Step 3, and Step 7.**
