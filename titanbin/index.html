@@ -21,9 +21,13 @@
 <body>
 
 
+  <!--Modal Contact Us-->
+
+
+
 
   <!-- Nav Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+  <nav class="shadow navbar navbar-expand-lg navbar-dark navbar-custom">
     <a class="navbar-brand" href="">TitanBin</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,17 +42,52 @@
           <a class="nav-link" href="">Link 2</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Contact Us</a>
+          <a class="nav-link" href="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact Us</a>
         </li>
       </ul>
     </div>
   </nav>
   <!-- End of Navbar -->
 
+  <!-- Modal Contact us -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="lead">Please get in touch!</p>
+        <form method="post" id="myForm">
+          <div class="form-group">
+            <label for="name">Your name:</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="" required/>
+          </div>
+          <div class="form-group">
+            <label for="email">Your email:</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="" required/>
+          </div>
+          <div class="form-group">
+            <label for="comment">Your comment:</label>
+            <textarea class="form-control" id="comment" name="comment" required></textarea>
+          </div>
+          <input type="submit" name="submit" class="btn btn-success btn-md" value="submit">
+        </form>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of modal contact us -->
+
+
   <!-- Background image -->
   <div class="background-pic"></div>
   <!-- end of Background image -->
-  
+
   <!--features-->
   <section id="features">
     <div class="container-fluid">
@@ -61,16 +100,17 @@
         <div class="feature-box col-lg-4">
           <i class="icon fas fa-hdd fa-4x"></i>
           <h3>Secure Servers</h3>
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuntullamco laboris </p>
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuntullamco laboris
+          </p>
         </div>
         <div class="feature-box col-lg-4">
           <i class="icon fas fa-share-square fa-4x"></i>
           <h3>Easyt to share.</h3>
           <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et do
+        </div>
       </div>
-    </div>
   </section>
-<!-- End of features -->
+  <!-- End of features -->
 </body>
 
 </html>
