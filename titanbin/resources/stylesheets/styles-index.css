@@ -1,0 +1,34 @@
+.background-pic {
+    background: url("/resources/images/hi.png");
+    height: 600px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#features{
+    
+    position: absolute;
+    top: 656px;
+    width: 100%;
+    background-color: #E8E9ED;
+    
+}
+
+.feature-box {
+    margin-top: 5%;
+    text-align: center;
+    /* color: #f6d0b1; */
+    color: #001514;
+}
+
+.icon{
+    color: #001514;
+    margin-bottom: 1rem;
+
+}
+
+.icon:hover {
+    color: #EEA76D;
+}
