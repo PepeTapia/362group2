@@ -1,9 +1,8 @@
-# Iteration 2:
-
-Project hosted on Google Cloud and files stored in Google Cloud Storage.
-
-- app.yaml handles static files for website.
-- index.php handles redirecting requests.
+# Iteration 4:
+### **List of things done:**
+Brandon:
+- fixed login system using CloudSQL
+- added dedicated bucket for each user
 
 ## **SETUP:**
 
@@ -23,9 +22,16 @@ Project hosted on Google Cloud and files stored in Google Cloud Storage.
 
 7. Now, you can either host locally or type "gcloud app deploy" to host web application to Google Cloud. 
 
-## **NOTE:**
-For **_href_** attributes, you can put just the file name and its type ("test.php") and set up what directories the file is in via index.php.
 
-**EXAMPLE:**
+## NOTE:
+1) For redirecting to another file/url via php:
 
-![example](https://user-images.githubusercontent.com/55907638/135773345-4fa579a4-65d7-45b6-a6d9-26f998cff46f.png)
+    - use ```echo "<script> location.href='/home.php'; </script>";``` rather than ```header(location: home.php);```
+
+2) For **_href_** attributes:
+    - you can put just the file name and its type ("test.php") and set up what directories the file is in via index.php.
+
+    - **EXAMPLE:**
+
+       ![example](https://user-images.githubusercontent.com/55907638/135773345-4fa579a4-65d7-45b6-a6d9-26f998cff46f.png)
+
