@@ -8,15 +8,15 @@ Brandon:
 
 **If you downloaded my .7zip file from Discord and extracted to "C:/Users/name", you just need to do Step 1, Step 3, and Step 7.**
 
-1. Download Cloud SDK installer and initialize GCloud to our project: https://cloud.google.com/sdk/docs/quickstart
+1. Download Cloud SDK installer, Composer from https://getcomposer.org/download/, and initialize GCloud to our project: https://cloud.google.com/sdk/docs/quickstart
 
 2. Clone github and extract titanbin file to "C:/Users/name" 
 
 3. In cmd, type "cd C:/Users/name/titanbin"
 
-4. Next, type "compose install"
+4. Next, type "composer install"
 
-5. After installation finishes, delete the compose.lock file in titanbin directory
+5. After installation finishes, delete the composer.lock file in titanbin directory
 
 6. You will also need "keyfile.json" file in titanbin directory to connect to Google Cloud Storage in home.php, which can be downloaded from our Discord.
 
