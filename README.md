@@ -3,6 +3,7 @@
 Brandon:
 - fixed login system using CloudSQL
 - added dedicated bucket for each user
+- merged Ramiro's intro page to project
 
 ## **SETUP:**
 
