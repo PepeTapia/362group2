@@ -1,7 +1,7 @@
 # Iteration 4:
 ### **List of things done:**
 Brandon:
-- fixed login system using CloudSQL
+- reimplement CloudSQL for login system
 - added dedicated bucket for each user
 - merged Ramiro's intro page to project
 
