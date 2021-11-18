@@ -1,6 +1,12 @@
 <?php
 include "class.php";
+if (!isset($_SESSION))
+  {
+    session_start();
+  }
+?>
 
+<?php
 $link = "";
 $link_status ="display: none;";
 
