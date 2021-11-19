@@ -6,66 +6,49 @@
 	include "./login/connection.php";
 	include "./login/functions.php";
 
-	// SQL is vulnerable to injections, will fix in the future!
-
-	if(isset($_POST['login-submit']))
-	{
+  if(isset($_POST['login-submit'])) {
 		//something was posted
 		$user_name = $_POST['login-user_name'];
 		$password = $_POST['login-password'];
 
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
-		{
+		if(!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
 
 			//read from database
-			$query = "select * from users where user_name = '$user_name' limit 1";
-			$result = mysqli_query($con, $query);
+      $query = $con->prepare("select * from users where user_name = ? limit 1");
+      $query->bind_param('s', $user_name);
+      $query->execute();
+      $result = $query->get_result();
 
-			if($result && mysqli_num_rows($result) > 0)
-			{
+			if($result && mysqli_num_rows($result) > 0) {
 				$user_data = mysqli_fetch_assoc($result);
 				
-				if($user_data['password'] === $password)
-				{
+				if($user_data['password'] === $password) {
 
 					$_SESSION['user_id'] = $user_data['user_id'];
 			
 					echo "<script> window.location.href='home.php'; </script>";
 				}
-				else{
-					echo "wrong username or password!";
-				}
 			}
-
-		}else
-		{
-			echo "wrong username or password!";
 		}
+		echo "wrong username or password!";
 	}
 
-
-	if(isset($_POST['sign-submit']))
-	{
+	if(isset($_POST['sign-submit'])) {
 		//something was posted
 		$user_name = $_POST['sign-user_name'];
 		$password = $_POST['sign-password'];
 
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
-		{
+		if(!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
 
 			//save to database
 			$user_id = random_num(20);
-			$query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
-			
-			mysqli_query($con, $query);
+      $query = $con->prepare("insert into users (user_id,user_name,password) values (?,?,?)");
+      $query->bind_param("sss", $user_id, $user_name, $password);
+      $query->execute();
 
 			echo "<script> location.href='intro.php'; </script>"; 
-
-			#die();
-		}else
-		{
-			echo "Please enter some valid information!";
-		}
+    }
+		echo "Please enter some valid information!";
 	}
 ?>
 
