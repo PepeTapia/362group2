@@ -1,5 +1,6 @@
 <?php
 include "class.php";
+
 if (!isset($_SESSION))
   {
     session_start();
@@ -7,6 +8,8 @@ if (!isset($_SESSION))
 ?>
 
 <?php
+
+
 $link = "";
 $link_status ="display: none;";
 
@@ -51,7 +54,7 @@ if(isset($_POST['submit'])){
 		<!-- all the content relevant to the header is contained in this div -->
 		<div class="header">
 		<span style="font-size: 30px; cursor: pointer; float: left;" onclick="openNav()">&#9776;</span>
-		 <a href="home.php" class="title">Welcome!</a>
+		 <a href="home.php" class="title">Welcome <?php echo $username; ?>!</a>
 		</div>
 		
 		<!-- button to select and upload file -->
