@@ -6,8 +6,9 @@ Brandon:
 - merged Ramiro's intro page to project
 
 ## **SETUP:**
+**All files here are not meant to be ran but used for reference.**
 
-**You can also download the project files from the Google Drive link in Discord that has everything pre-installed and ready to deploy**
+**You can also download the project files from the Google Drive link in Discord that has everything pre-installed and ready to deploy.**
 
 1. Download Cloud SDK installer and initialize GCloud to our project: https://cloud.google.com/sdk/docs/quickstart
 
