@@ -5,6 +5,14 @@ Brandon:
 - added dedicated bucket for each user
 - merged Ramiro's intro page to project
 
+Ramiro:
+
+Streamlined the code & cleaned up the site
+Created Login/Signup form
+Moved Contact Us form to main page instead of having its own separate page
+Redesigned the website (still a WIP)
+Implemented separate sites into the landing page
+
 ## **SETUP:**
 **All files here are not meant to be ran but used for reference.**
 
