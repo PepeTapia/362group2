@@ -13,6 +13,8 @@ Ramiro:
 - Redesigned the website (still a WIP)
 - Implemented separate sites into the landing page
 
+(All of the code I worked on for site overhaul can be seen under the Ramiro-Iteration4 Branch)
+
 ## **SETUP:**
 **All files here are not meant to be ran but used for reference.**
 
