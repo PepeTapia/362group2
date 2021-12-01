@@ -15,11 +15,14 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
 	case '/home.php':
 		require 'home.php';
 		break;
+	case '/files.php':
+		require 'files.php';
+		break;
 	case '/trash.php':
 		require 'trash.php';
 		break;
-	case '/files.php':
-		require 'files.php';
+	case '/logout.php':
+		require './login/logout.php';
 		break;
     default:
         require 'intro.php';

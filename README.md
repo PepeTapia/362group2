@@ -5,9 +5,20 @@ Brandon:
 - added dedicated bucket for each user
 - merged Ramiro's intro page to project
 
-## **SETUP:**
+Ramiro:
 
-**You can also download the project files from the Google Drive link in Discord that has everything pre-installed and ready to deploy**
+- Streamlined the code & cleaned up the site
+- Created Login/Signup form
+- Moved Contact Us form to main page instead of having its own separate page
+- Redesigned the website (still a WIP)
+- Implemented separate sites into the landing page
+
+(All of the code I worked on for site overhaul can be seen under the Ramiro-Iteration4 Branch)
+
+## **SETUP:**
+**All files here are not meant to be ran but used for reference.**
+
+**You can also download the project files from the Google Drive link in Discord that has everything pre-installed and ready to deploy.**
 
 1. Download Cloud SDK installer and initialize GCloud to our project: https://cloud.google.com/sdk/docs/quickstart
 
