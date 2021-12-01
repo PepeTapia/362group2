@@ -1,8 +1,4 @@
 <?php
-	// session_start();
-?>
-
-<?php
 	include "./login/connection.php";
 	include "./login/functions.php";
 
@@ -53,8 +49,6 @@
 ?>
 
 <!DOCTYPE html>
-
-
 <html>
 
 <head>
@@ -65,12 +59,17 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="./resources/stylesheets/styles.css">
   <link rel="stylesheet" href="./resources/stylesheets/styles-intro.css">
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+
 
   <script src="https://kit.fontawesome.com/96cbf68b40.js" crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
+
+  
 </head>
 <body>
   <!-- Nav Bar -->
@@ -114,9 +113,9 @@
                   <input id="text" type="password" name="login-password"/>
               </label>
               <p class="forgot-pass">Forgot password?</p>
-              <!-- <input type="submit" name="login-submit" class="btn btn-success btn-md" value="Login"> -->
               <button type="submit" class="submit" name="login-submit">Sign In</button>
-            </form> 
+            </form>
+         
         </div>
         <div class="sub-cont">
             <div class="img">
@@ -150,6 +149,7 @@
                   </label>
                   <button type="submit" class="submit" name="sign-submit">Sign Up</button>
                 </form>
+                
             </div>
         </div>
     </div>
@@ -201,7 +201,7 @@
   <!-- end of Background image -->
 
   <!--features-->
-  <section id="features">
+  <!-- <section id="features">
     <div class="container-fluid">
       <div class="row">
         <div class="feature-box col-lg-4">
@@ -221,8 +221,66 @@
           <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et do
         </div>
       </div>
-  </section>
+
+      
+  </section> -->
   <!-- End of features -->
+
+<section id="intro">
+  <h2>Hello There,</h2>
+  <h1>Welcome To TitanBin</h1>
+  <p>At TitanBin We want to provide a easy to use, easy to share, and secure service for our users</p>
+</section>
+
+<section id="bottomdivs">
+  <div class="row">
+    <div class="col">
+      <i class="icon fa fa-desktop fa-3x" aria-hidden="true"></i>
+      <h2>Titanbin is easy to use</h2>
+      <p>Just drag and drop from your files and you're ready to upload</p>
+    </div>
+    <div class="col-4"></div>
+    <div class="col">
+      <i class="icon fa fa-share-square fa-3x" aria-hidden="true"></i>
+      <h2>Easy to share</h2>
+      <p>Two easy clicks and you'll be able to share all your files with friends and family </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <i class="icon fa fa-lock fa-3x" aria-hidden="true"></i>
+      <h2>TitanBin is Secure</h2>
+      <p>TitanBin uses Google's State Of The Art Service that has multiple layers of securities for its users</p>
+    </div>
+      <div class="col-4 div-image">
+    </div>
+    <div class="col">
+      <i class="icon fa fa-phone-square fa-3x" aria-hidden="true"></i>
+
+      <h2>Customer Support is just around the corner</h2>
+      <p>At TitanBin we make customer support one of our top priorities, someone is always ready to help</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- <div class="footer-basic">
+    <footer>
+        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#">Services</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">Company Name Â© 2018</p>
+    </footer> -->
+</div>
 
 </body>
 

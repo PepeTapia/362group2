@@ -133,13 +133,13 @@ $storage = new googleStorage();
 
 // create bucket if user is new
 try {
-	$storage->create_bucket($user_id);
+	$storage->create_bucket("titanbin".$user_id);
 } catch (Exception $e){
 	echo "";
 }
 
 // set bucket based on user 
-$storage->set_bucket($user_id);
+$storage->set_bucket("titanbin".$user_id);
 
 ?>
 

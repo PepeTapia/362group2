@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
 		<a href="home.php">Home</a>
 		<a href="files.php">Files</a>
 		<a href="trash.php">Rubbish</a>
-		<a id="loginout-link" href="intro.php">Logout</a>
+		<a id="loginout-link" href="logout.php">Logout</a>
 	</div>
 	<header>
 		<!-- all the content relevant to the header is contained in this div -->
