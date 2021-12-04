@@ -15,6 +15,7 @@ Link: https://verdant-oven-330403.wl.r.appspot.com
         - ex: /api/get?bucket=group7&filename=hello
 
 ![image](https://user-images.githubusercontent.com/55907638/144702857-abafb795-1c91-4864-a8e8-c2577f77e672.png)
+![image](https://user-images.githubusercontent.com/55907638/144702988-78f363cf-a829-47a3-a66f-db114bb32fea.png)
 
 
 ### /api/post
