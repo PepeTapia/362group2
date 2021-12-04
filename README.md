@@ -13,6 +13,10 @@ Link: https://verdant-oven-330403.wl.r.appspot.com
         - ex: /api/get?bucket=group7 
     - Given both: returns specific file from bucket
         - ex: /api/get?bucket=group7&filename=hello
+
+![image](https://user-images.githubusercontent.com/55907638/144702857-abafb795-1c91-4864-a8e8-c2577f77e672.png)
+
+
 ### /api/post
     - Url Parameters:
         - bucket = name of storage
@@ -20,6 +24,9 @@ Link: https://verdant-oven-330403.wl.r.appspot.com
         - request body with json data
     - Given all three, stores data as json file inside bucket in Cloud Storage
         - ex: /api/post?bucket=group7&filename=hello
+        
+![image](https://user-images.githubusercontent.com/55907638/144702819-6c000121-f50c-447a-b4bd-72c115892047.png)
+![image](https://user-images.githubusercontent.com/55907638/144702843-18ce3cd8-3477-4403-bf50-3dba8137a6cb.png)
 
 ## **SETUP:**
 
