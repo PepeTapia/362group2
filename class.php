@@ -74,8 +74,6 @@ class googleStorage{
  #    	$bucketname = "titanbin.appspot.com";
  		#$bucketName = 'cloud-site-325604.appspot.com';
 #    	$directoryPrefix = 'myDirectory/';
-
-
     	$bucket = $this->storage->bucket($this->bucketName);
     	#$options = ['prefix' => $directoryPrefix];
 		
@@ -83,38 +81,85 @@ class googleStorage{
 
 		foreach ($object_array as $object) {
 			$info = $object->info();
-			echo '<tr>';
 
-			echo '<th style="width:3%" class="custom-checkbox-header">';
-			echo '<div class="custom-control custom-checkbox">';
-			echo '<input type="checkbox" class="custom-control-input" id="js-select-all-items" onclick="checkbox_toggle()">';
-			echo '<label class="custom-control-label" for="js-select-all-items"></label>';
-			echo '</div>';
-			echo '</th>';
-			
-			echo '<td>'.$object->name().'</td>';
-			echo '<td>'.$info['size'].'</td>';
-			echo '<td>'.$info['updated'].'</td>';
-			echo '<td>'.$info['contentType'].'</td>';
-			echo '<td>'.'<button name="dl" class="btn">Download</button>'.'</td>';
-			echo '</tr>';
-
-			// if(isset($_POST['dl'])){
-			// 	$bucket = $this->storage->bucket($bucketName);
-			// 	$object = $bucket->object($object->name());
-
-			// 	// $uri = "https://storage.cloud.google.com/". $bucketName . '/' . $object->name();
-			// 	// echo file_get_contents($uri);
-
-			// 	// $object->downloadToFile($object->name());
-
-			// 	$msg = "Downloaded!";
-			// 	// $msg = sprintf('Downloaded gs://%s/%s to %s' . PHP_EOL, $bucketName, $object->name(), basename("__DIR__". $object->name()));
-			// 	echo '<div class="msg">' . $msg . '</div>';
-			// }
-			
+			$this->display_chart_elements($info);
     	}
 
+	}
+
+	function display_chart_elements($info){
+		echo '<tr>';
+
+		echo '<th style="width:3%" class="custom-checkbox-header">';
+		echo '<div class="custom-control custom-checkbox">';
+		echo '<input type="checkbox" class="custom-control-input" id="js-select-all-items" onclick="checkbox_toggle()">';
+		echo '<label class="custom-control-label" for="js-select-all-items"></label>';
+		echo '</div>';
+		echo '</th>';
+		
+		echo '<td>'.$info['name'].'</td>';
+		echo '<td>'.$this->formatSize($info['size']).'</td>';
+		echo '<td>'.$info['updated'].'</td>';
+		echo '<td>'.$info['contentType'].'</td>';
+		echo '<td>';
+		echo '<div class="kebab" style="cursor: pointer;" onclick="clickEnabler()">';
+		echo '<figure></figure>';
+    	echo '<figure class="middle"></figure>';
+    	echo '<p class="cross">x</p>';
+    	echo '<figure></figure>';
+    	echo '<ul class="flowdown">';
+		echo '<li><button name="rnm" class="btn">Rename</button></li>';
+		echo '<li><button name="dld" class="btn">Download</button></li>';
+		echo '<li><button name="dlt" class="btn">Delete</button></li>';
+    	echo '</ul>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+
+		//echo '<td>'."Temp for Actions".'</td>';
+		echo '</tr>';
+	}
+
+	function formatSize($bytes){
+		$units = array('B', 'KB', 'MB', 'GB', 'TB');
+		$precision = 2;
+
+		$bytes = max($bytes, 0);
+		$pow = floor(($bytes ? log($bytes) : 0) / log(1024)); 
+		$pow = min($pow, count($units) - 1); 
+
+		$bytes /= pow(1024, $pow);
+
+		return round($bytes, $precision) . ' ' . $units[$pow]; 
+	}
+
+	function deleteObject($bucket_unit, $objectName){
+		//	$bucketName = 'my-bucket';
+		//  $objectName = 'my-object';
+	
+			$storage = new StorageClient();
+			$bucket = $bucket_unit;
+			$object = $bucket->object($objectName);
+			$object->delete();
+			printf('Deleted gs://%s/%s' . PHP_EOL, $bucketName, $objectName);
+		}
+	
+		function rename_move_object($bucket_unit, $objectName, $new_bucket_unit, $newObjectName){
+		// $bucketName = 'my-bucket';
+		// $objectName = 'my-object';
+		// $newBucketName = 'my-other-bucket';
+		// $newObjectName = 'my-other-object';
+	
+			$storage = new StorageClient();
+			$bucket = $bucket_unit;
+			$object = $bucket->object($objectName);
+			$object->copy($new_bucket_unit, ['name' => $newObjectName]);
+			$object->delete();
+			printf('Moved gs://%s/%s to gs://%s/%s' . PHP_EOL,
+				$bucket_unit,
+				$objectName,
+				$new_bucket_unit,
+				$newObjectName);
 	}
 }
 

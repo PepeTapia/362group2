@@ -1,13 +1,5 @@
-
-
 $objects = is_readable($path) ? scandir($path) : array();
-$folders = array();
-$files = array();
-
 $(document).ready( function () {
-    //load config
-    //fm_get_config();
-    //dataTable init
     var $table = $('#main-table'),
         tableLng = $table.find('th').length,
         _targets = (tableLng && tableLng == 7 ) ? [0, 4,5,6] : tableLng == 5 ? [0,4] : [3],
@@ -29,3 +21,17 @@ $(document).ready( function () {
     });
 });
 
+var kebab = document.querySelector('.kebab');
+var middle = document.querySelector('.middle');
+var cross = document.querySelector('.cross');
+var flowdown = document.querySelector('.flowdown');
+
+function clickEnabler(){
+    var middle = document.querySelector('.middle');
+    var cross = document.querySelector('.cross');
+    var flowdown = document.querySelector('.flowdown');
+
+    middle.classList.toggle('active');
+    cross.classList.toggle('active');
+    flowdown.classList.toggle('active');
+}
