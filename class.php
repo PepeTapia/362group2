@@ -134,7 +134,6 @@ class googleStorage{
 	function get_object($fileName){
 		$data = json_decode(file_get_contents("gs://{$this->bucketName}/{$fileName}"), true);
 		echo json_encode($data);
-
 	}
 }
 

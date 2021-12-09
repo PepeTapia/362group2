@@ -37,3 +37,24 @@ h1 {
 .nav-link:hover{
     color: #E5E59F !important;
 }
+
+.offcanvas-body{
+    background-color: #111; 
+}
+
+
+
+.offcanvas-header{
+    background-color: rgb(136, 199, 204) ;
+}
+
+.span-sidenav{
+    font-size: 24px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+
+.offcanvas .offcanvas-start {
+    width: 200px;
+}
