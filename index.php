@@ -39,7 +39,6 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
 		}
 		if(isset($_SESSION['user_id'])){
 			unset($_SESSION['user_id']);
-		
 		}
 		require './login/logout.php';
 		break;
