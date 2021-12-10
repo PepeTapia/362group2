@@ -1,7 +1,14 @@
-
+<?php
+if (!isset($_SESSION))
+  {
+    session_start();
+  }
+?>
 
 <?php
 require './vendor/autoload.php';
+include "./login/connection.php";
+
 
 use \Google\Cloud\Storage\StorageClient;
 
