@@ -77,6 +77,7 @@ div.select {
 }
 
 .file__upload{
-  position: relative;
-  bottom: 100px;
+  position: fixed;
+  top: 30%;
+  left: 42.5%;
 }

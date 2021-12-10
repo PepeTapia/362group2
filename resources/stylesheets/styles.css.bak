@@ -10,12 +10,6 @@ h1 {
     line-height: 1.5;
 }
 
-h2 {
-    font-family: "Montserrat-Black";
-    font-size: 3rem;
-    line-height: 1.5;
-}
-
 /* Navbar */
 
 .navbar-custom{
@@ -44,12 +38,6 @@ h2 {
     color: #E5E59F !important;
 }
 
-
-.offcanvas-title {
-    font-family: Papyrus, fantasy;
-        font-size: 2.2rem;
-    line-height: 1.5;
-}
 .offcanvas-body{
     background-color: #111; 
 }
@@ -58,9 +46,6 @@ h2 {
 
 .offcanvas-header{
     background-color: rgb(136, 199, 204) ;
-    color: beige !important;
-
-
 }
 
 .span-sidenav{

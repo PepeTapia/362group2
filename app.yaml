@@ -1,0 +1,49 @@
+runtime: php74 # Replace with php74 to use PHP 7.4
+
+runtime_config:
+  document_root: .
+
+handlers:
+#Serve a directory as a static resource.
+- url: /resources/stylesheets
+  static_dir: resources/stylesheets
+  
+- url: /resources/javascript
+  static_dir: resources/javascript
+  
+# Serve images as static resources.
+- url: /resources/images/(.*\.(ico|jpeg|jpg|png|gif))$
+  static_files: resources/images/\1
+  upload: resources/images/.*\.(ico|jpeg|jpg|png|gif)$
+  
+# - url: /resources/images/(.+\.(png|jpg|ico))$
+  # static_dir: resources/images
+- url: /session.php
+  script: session.php
+  
+- url: /api/delete
+  script: /api/delete.php
+  
+- url: /api/get
+  script: /api/get.php
+
+- url: /api/post
+  script: /api/post.php
+
+# Serve your app through a front controller at index.php or public/index.php.
+- url: /.*
+  script: auto
+    
+env_variables:
+  CLOUD_SQL_USERNAME: "root"
+  CLOUD_SQL_PASSWORD: "wDAh5OHLtsA98Cve"
+  CLOUD_SQL_DATABASE_NAME: "login"
+  # CLOUD_SQL_CONNECTION_NAME: verdant-oven-330403:us-west2:titanbin-sql-server
+  CLOUD_SQL_HOST: 35.236.43.76
+  CLOUD_SQL_SOCKET_DIR: "/cloudsql/verdant-oven-330403:us-west2:titanbin-sql-server"
+
+#vpc_access_connector:
+#  name: "projects/titanbin/locations/us-west2/connectors/titanbinconnector"
+    
+  
+ 

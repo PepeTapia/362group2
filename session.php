@@ -30,4 +30,19 @@ try {
 // set bucket based on user 
 $storage->set_bucket("titanbin".$user_id);
 
+if($_POST['action_param'] == 'rename') {
+
+	$storage->rename_move_object($_POST['name_param'], $_POST['new_name']);
+}
+else if($_POST['action_param'] == 'delete') {
+
+	$storage->deleteObject($_POST['name_param']);
+}
+else if($_POST['action_param'] == 'download') {
+
+	$fp = fopen($path, 'w');
+	$storage->download_object($_POST['name_param'],$fp);
+	fclose($fp);
+}
+
 ?>

@@ -62,10 +62,10 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="./resources/stylesheets/styles.css">
-  <link rel="stylesheet" href="./resources/stylesheets/styles-intro.css">
+  <link rel="stylesheet" href="resources/stylesheets/styles.css">
+  <link rel="stylesheet" href="resources/stylesheets/styles-intro.css">
   <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
 
 
   <script src="https://kit.fontawesome.com/96cbf68b40.js" crossorigin="anonymous"></script>
@@ -87,10 +87,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link nav-link-custom" href="">Home</a>
+          <a class="nav-link nav-link-custom" href="intro.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Link 2</a>
+          <a class="nav-link">Link 2</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact Us</a>

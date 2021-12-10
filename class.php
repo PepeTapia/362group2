@@ -62,50 +62,16 @@ class googleStorage{
 		return 'https://storage.cloud.google.com/'. $this->bucketName . '/' . $objectName;
 	}
 	function list_objects(){
- #    	$bucketname = "titanbin.appspot.com";
- 		#$bucketName = 'cloud-site-325604.appspot.com';
-#    	$directoryPrefix = 'myDirectory/';
-
-
-    	$bucket = $this->storage->bucket($this->bucketName);
-    	#$options = ['prefix' => $directoryPrefix];
+		$bucket = $this->storage->bucket($this->bucketName);
 		
 		$object_array = $bucket->objects();
-
+		$temp = 0;
 		foreach ($object_array as $object) {
+			$temp = $temp + 1;
 			$info = $object->info();
-			echo '<tr>';
 
-			echo '<th style="width:3%" class="custom-checkbox-header">';
-			echo '<div class="custom-control custom-checkbox">';
-			echo '<input type="checkbox" class="custom-control-input" id="js-select-all-items" onclick="checkbox_toggle()">';
-			echo '<label class="custom-control-label" for="js-select-all-items"></label>';
-			echo '</div>';
-			echo '</th>';
-			
-			echo '<td>'.$object->name().'</td>';
-			echo '<td>'.$info['size'].'</td>';
-			echo '<td>'.$info['updated'].'</td>';
-			echo '<td>'.$info['contentType'].'</td>';
-			echo '<td>'.'<button name="dl" class="btn">Download</button>'.'</td>';
-			echo '</tr>';
-
-			// if(isset($_POST['dl'])){
-			// 	$bucket = $this->storage->bucket($bucketName);
-			// 	$object = $bucket->object($object->name());
-
-			// 	// $uri = "https://storage.cloud.google.com/". $bucketName . '/' . $object->name();
-			// 	// echo file_get_contents($uri);
-
-			// 	// $object->downloadToFile($object->name());
-
-			// 	$msg = "Downloaded!";
-			// 	// $msg = sprintf('Downloaded gs://%s/%s to %s' . PHP_EOL, $bucketName, $object->name(), basename("__DIR__". $object->name()));
-			// 	echo '<div class="msg">' . $msg . '</div>';
-			// }
-			
-    	}
-
+			$this->display_chart_elements($info,$temp);
+		}
 	}
 	function post_upload($objectName, $data){
 		$bucket = $this->storage->bucket($this->bucketName);
@@ -135,6 +101,69 @@ class googleStorage{
 		$data = json_decode(file_get_contents("gs://{$this->bucketName}/{$fileName}"), true);
 		echo json_encode($data);
 
+	}
+	function display_chart_elements($info,$temp){
+		echo '<tr>';
+
+		echo '<th style="width:3%" class="custom-checkbox-header">';
+		echo '<div class="custom-control custom-checkbox">';
+		echo '<input type="checkbox" class="custom-control-input" id="js-select-all-items" onclick="checkbox_toggle()">';
+		echo '<label class="custom-control-label" for="js-select-all-items"></label>';
+		echo '</div>';
+		echo '</th>';
+		
+		echo '<td>'.$info['name'].'</td>';
+		echo '<td>'.$this->formatSize($info['size']).'</td>';
+		echo '<td>'.$info['updated'].'</td>';
+		echo '<td>'.$info['contentType'].'</td>';
+		echo '<td>';
+		echo '<div class="kebab" style="cursor: pointer;" onclick="clickEnabler('. $temp.')">';
+		echo '<figure></figure>';
+    	echo '<figure class="middle'. $temp.' middlestlye"></figure>';
+    	echo '<p class="cross'. $temp.' crossstlye">x</p>';
+    	echo '<figure></figure>';
+    	echo '<ul class="flowdown'. $temp.' flowdownstyle">';
+		echo '<li><button name="rnm" class="btn1" onclick="myAjax(\''.$info['name'].'\',\'rename\')">Rename</button></li>';
+		echo '<li><button name="dld" class="btn1" onclick="myAjax(\''.$info['name'].'\',\'download\')">Download</button></li>';
+		echo '<li><button name="dlt" class="btn1"onclick="myAjax(\''.$info['name'].'\',\'delete\')">Delete</button></li>';
+    	echo '</ul>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '</tr>';
+	}
+	function formatSize($bytes){
+		$units = array('B', 'KB', 'MB', 'GB', 'TB');
+		$precision = 2;
+
+		$bytes = max($bytes, 0);
+		$pow = floor(($bytes ? log($bytes) : 0) / log(1024)); 
+		$pow = min($pow, count($units) - 1); 
+
+		$bytes /= pow(1024, $pow);
+
+		return round($bytes, $precision) . ' ' . $units[$pow]; 
+	}
+
+	function deleteObject($objectName){
+			$bucket = $this->storage->bucket($this->bucketName);
+			$object = $bucket->object($objectName);
+			$object->delete();
+			$msg = 'Deleted ' . $objectName;
+
+			echo json_encode(array('message' => $msg));
+		}
+	
+	function rename_move_object($objectName,$newObjectName){
+		$bucket = $this->storage->bucket($this->bucketName);
+		$object = $bucket->object($objectName);
+		$object->copy($this->bucketName, ['name' => $newObjectName]);
+		$object->delete();
+		printf('Moved gs://%s/%s to gs://%s/%s' . PHP_EOL,
+			$bucket_unit,
+			$objectName,
+			$new_bucket_unit,
+			$newObjectName);
 	}
 }
 

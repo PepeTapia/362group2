@@ -82,7 +82,7 @@
     text-decoration: underline;
 }
 
-.btn {
+.button {
     background: #4db6ac;
     border: none;
     outline: none;
@@ -96,7 +96,7 @@
     transition: .3s;
 }
 
-.btn:hover {
+.button:hover {
     opacity: 1;
 }
 
