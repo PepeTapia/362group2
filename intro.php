@@ -87,10 +87,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link nav-link-custom" href="">Home</a>
+          <a class="nav-link nav-link-custom" href="intro.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Link 2</a>
+          <a class="nav-link" href="home.php">User page</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact Us</a>

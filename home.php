@@ -64,10 +64,10 @@ if(isset($_POST['submit'])){
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
-					<a class="nav-link nav-link-custom" href="">Home</a>
+					<a class="nav-link nav-link-custom" href="intro.php">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="">Link 2</a>
+					<a class="nav-link" href="home.php">User page</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#exampleModal" data-bs-toggle="modal"
@@ -165,35 +165,31 @@ if(isset($_POST['submit'])){
 		</div> -->
 
 	<!-- file uploading functionality -->
-	<div class="file_upload_body">
-		<div class="file__upload">
-			<div class="header">
-				<p><i class="fa fa-cloud-upload fa-2x"></i><span><span>Up</span>Load</span></p>
-			</div>
-			<form action="" method="POST" enctype="multipart/form-data" class="body">
-				<!-- Shareable Link Code -->
-				<input type="checkbox" id="link_checkbox">
-				<input type="text" value="<?php echo $link; ?>" id="link" readonly>
-				<label for="link_checkbox" style="<?php echo $link_status; ?>">Get Shareable Link</label>
+	<div class="file__upload">
+		<div class="header">
+			<p><i class="fa fa-cloud-upload fa-2x"></i><span><span>Up</span>Load</span></p>			
+		</div>
+		<form action="" method="POST" enctype="multipart/form-data" class="body">
+			<!-- Shareable Link Code -->
+			<input type="checkbox" id="link_checkbox">
+			<input type="text" value="<?php echo $link; ?>" id="link" readonly>
+			<label for="link_checkbox" style="<?php echo $link_status; ?>">Get Shareable Link</label>
 
-				<input type="file" name="file" id="upload" required>
-				<label for="upload">
-					<i class="fa fa-file-text-o fa-3x"></i>
-					<p>
-						<strong>Drag and drop</strong> files here<br>
-						or <span>browse</span> to begin the upload
-					</p>
-				</label>
-				<button name="submit" class="btn">Upload</button>
-			</form>
-			<div class="image-preview" id="imagePreview">
-				<img src="" alt="Image Preview" class="image-preview__image">
-				<span class="image-preview__deault-text">
-					<!--Image Preview--></span>
-			</div>
+			<input type="file" name="file" id="upload" required>
+			<label for="upload">
+				<i class="fa fa-file-text-o fa-3x"></i>
+				<p>
+					<strong>Drag and drop</strong> files here<br>
+					or <span>browse</span> to begin the upload
+				</p>
+			</label>
+			<button name="submit" class="button">Upload</button>
+		</form>
+		<div class="image-preview" id="imagePreview">
+			<img src = "" alt="Image Preview" class="image-preview__image">
+			<span class="image-preview__deault-text"><!--Image Preview--></span>
 		</div>
 	</div>
-	</header>
 
 	<script>
 		const upload = document.getElementById("upload");
