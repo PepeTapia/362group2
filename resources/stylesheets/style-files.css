@@ -74,7 +74,7 @@ div.select {
   background: #00bcd4;
   margin: 3px 0;
 }
-.middle {
+.middlestyle {
   transition: all 0.25s cubic-bezier(0.72, 1.2, 0.71, 0.72);
   transform: scale(1);
   position: relative;
@@ -82,12 +82,12 @@ div.select {
   -webkit-filter: blur(0.1px);
   filter: blur(0.1px);
 }
-.middle.active {
+.middlestyle.active {
   transform: scale(4.5);
   transition: all 0.25s cubic-bezier(0.32, 2.04, 0.85, 0.54);
   box-shadow: 0 0.1px 0.1px 0 rgba(0, 0, 0, 0.16), 0 0.1px 0.3px 0 rgba(0, 0, 0, 0.12);
 }
-.cross {
+.crossstlye {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -99,7 +99,7 @@ div.select {
   font-size: 22px;
   user-select: none;
 }
-.cross.active {
+.crossstlye.active {
   transform: translate(-50%, -50%) scale(1);
   transition: all 0.15s cubic-bezier(0.32, 2.04, 0.85, 0.54);
 }
@@ -120,7 +120,7 @@ div.select {
  color: darken($grey, 20%);
  text-decoration: none;
  }*/
-.flowdown {
+.flowdownstyle {
   position: absolute;
   /*right: 0;*/
   top: -2em;
@@ -129,24 +129,24 @@ div.select {
   transform-origin: 100% 0;
   /*box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);*/
 }
-.flowdown li {
+.flowdownstyle li {
   display: block;
   width: 100%;
 }
-.flowdown li a {
+.flowdownstyle li a {
   width: 100%;
   padding: 1em 18px;
   display: inline-block;
   white-space: pre;
   box-sizing: border-box;
 }
-.flowdown li a:hover {
+.flowdownstyle li a:hover {
   background: #ebebeb;
 }
-.flowdown:hover ul {
+.flowdownstyle:hover ul {
   transform: scale(1);
 }
-.flowdown.active {
+.flowdownstyle.active {
   transform: scale(1);
   transition: all 0.25s cubic-bezier(0.5, 1.8, 0.9, 0.8);
 }

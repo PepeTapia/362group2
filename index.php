@@ -24,6 +24,9 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
 	case '/logout.php':
 		require './login/logout.php';
 		break;
+	case '/class.php':
+		require 'class.php';
+		break;
     default:
         require 'intro.php';
 		break;

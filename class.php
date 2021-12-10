@@ -78,16 +78,17 @@ class googleStorage{
     	#$options = ['prefix' => $directoryPrefix];
 		
 		$object_array = $bucket->objects();
-
+		$temp = 0;
 		foreach ($object_array as $object) {
+			$temp = $temp + 1;
 			$info = $object->info();
 
-			$this->display_chart_elements($info);
+			$this->display_chart_elements($info,$temp);
     	}
 
 	}
 
-	function display_chart_elements($info){
+	function display_chart_elements($info,$temp){
 		echo '<tr>';
 
 		echo '<th style="width:3%" class="custom-checkbox-header">';
@@ -102,21 +103,19 @@ class googleStorage{
 		echo '<td>'.$info['updated'].'</td>';
 		echo '<td>'.$info['contentType'].'</td>';
 		echo '<td>';
-		echo '<div class="kebab" style="cursor: pointer;" onclick="clickEnabler()">';
+		echo '<div class="kebab" style="cursor: pointer;" onclick="clickEnabler('. $temp.')">';
 		echo '<figure></figure>';
-    	echo '<figure class="middle"></figure>';
-    	echo '<p class="cross">x</p>';
+    	echo '<figure class="middle'. $temp.' middlestlye"></figure>';
+    	echo '<p class="cross'. $temp.' crossstlye">x</p>';
     	echo '<figure></figure>';
-    	echo '<ul class="flowdown">';
-		echo '<li><button name="rnm" class="btn">Rename</button></li>';
-		echo '<li><button name="dld" class="btn">Download</button></li>';
-		echo '<li><button name="dlt" class="btn">Delete</button></li>';
+    	echo '<ul class="flowdown'. $temp.' flowdownstyle">';
+		echo '<li><button name="rnm" class="btn" onclick="myAjax(\''.$info['name'].'\',\'rename\')">Rename</button></li>';
+		echo '<li><button name="dld" class="btn" onclick="myAjax(\''.$info['name'].'\',\'download\')">Download</button></li>';
+		echo '<li><button name="dlt" class="btn"onclick="myAjax(\''.$info['name'].'\',\'delete\')">Delete</button></li>';
     	echo '</ul>';
 		echo '</div>';
 		echo '</div>';
 		echo '</td>';
-
-		//echo '<td>'."Temp for Actions".'</td>';
 		echo '</tr>';
 	}
 
@@ -133,33 +132,23 @@ class googleStorage{
 		return round($bytes, $precision) . ' ' . $units[$pow]; 
 	}
 
-	function deleteObject($bucket_unit, $objectName){
-		//	$bucketName = 'my-bucket';
-		//  $objectName = 'my-object';
-	
-			$storage = new StorageClient();
-			$bucket = $bucket_unit;
+	function deleteObject($objectName){
+			$bucket = $this->storage->bucket($this->bucketName);
 			$object = $bucket->object($objectName);
 			$object->delete();
 			printf('Deleted gs://%s/%s' . PHP_EOL, $bucketName, $objectName);
 		}
 	
-		function rename_move_object($bucket_unit, $objectName, $new_bucket_unit, $newObjectName){
-		// $bucketName = 'my-bucket';
-		// $objectName = 'my-object';
-		// $newBucketName = 'my-other-bucket';
-		// $newObjectName = 'my-other-object';
-	
-			$storage = new StorageClient();
-			$bucket = $bucket_unit;
-			$object = $bucket->object($objectName);
-			$object->copy($new_bucket_unit, ['name' => $newObjectName]);
-			$object->delete();
-			printf('Moved gs://%s/%s to gs://%s/%s' . PHP_EOL,
-				$bucket_unit,
-				$objectName,
-				$new_bucket_unit,
-				$newObjectName);
+	function rename_move_object($objectName,$newObjectName){
+		$bucket = $this->storage->bucket($this->bucketName);
+		$object = $bucket->object($objectName);
+		$object->copy($this->bucketName, ['name' => $newObjectName]);
+		$object->delete();
+		printf('Moved gs://%s/%s to gs://%s/%s' . PHP_EOL,
+			$bucket_unit,
+			$objectName,
+			$new_bucket_unit,
+			$newObjectName);
 	}
 }
 
@@ -186,11 +175,18 @@ try {
 // set bucket based on user 
 $storage->set_bucket("titanbin".$user_id);
 
-?>
+if($_POST['action_param'] == 'rename') {
 
-<!-- <!DOCTYPE html>
-<html>
-	<head>
-		<link type="text/css" rel="stylesheet" href="./resources/stylesheets/style-home.css"></link>
-	</head>
-</html> -->
+	$storage->rename_move_object($_POST['name_param'], $_POST['new_name']);
+}
+else if($_POST['action_param'] == 'delete') {
+
+	$storage->deleteObject($_POST['name_param']);
+}
+else if($_POST['action_param'] == 'download') {
+
+    $fp = fopen($path, 'w');
+	$storage->download_object($_POST['name_param'],$fp);
+	fclose($fp);
+}
+?>
