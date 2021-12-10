@@ -2,6 +2,13 @@
 ### **List of things done:**
 Brandon:
 - added REST API (get/post)
+- Merged Ramiro's and Erik's Code
+
+### Results
+This is our final iteration. While we did not finish everything entirely, the product works and runs well.
+
+Things that do not work (that we found):
+- Erik's file actions functionality do not work completely after merge (was working before merge)
 
 ## REST API
 Link: https://verdant-oven-330403.wl.r.appspot.com
