@@ -1,5 +1,6 @@
+
 .background-pic {
-    background: url(login_img.png);
+    background: url("/resources/images/login_img.png");
     height: 600px;
     width: 100%;
     background-position: center;
@@ -19,7 +20,7 @@
 
 .feature-box {
     margin-top: 5%;
-    text-align: center;
+    text-align: center; 
     /* color: #f6d0b1; */
     color: #001514;
 }
@@ -65,10 +66,11 @@ button {
 
 .cont {
     border-radius: 20px;
+    
     overflow: hidden;
     position: relative;
     width: 900px;
-    height: 550px;
+    height: 500px;
     margin: 0 auto 100px;
     background: #fff;
     box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.15), inset -10px -10px 15px rgba(255, 255, 255, 0.3), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
@@ -336,5 +338,149 @@ input {
 
 
 
+
+
+
+/* Footer */
+.footer-basic {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: red;
+    color: white;
+    text-align: center;
+  }
+
+  /* .footer-basic {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding:40px 0;
+    background-color:#ffffff;
+    color:#4b4c4d;
+  } */
+  
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  
+  .footer-basic li {
+    padding:0 10px;
+  }
+  
+  .footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+  }
+  
+  .footer-basic .social {
+    text-align:center;
+    padding-bottom:25px;
+  }
+  
+  .footer-basic .social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .footer-basic .social > a:hover {
+    opacity:0.9;
+  }
+  
+  .footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+  }
+/* end of Footer */
+
+
+
+/* Intro Section */
+#intro{
+    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 24.5%;
+    width: 50%;
+}
+#intro h1{
+    font-size: 3.5rem;
+    color: #116A67;
+}
+
+#intro h2{
+    font-size: 2rem;
+    color: #ABA021;
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+}
+#intro p {
+    font-size: 1.5rem;
+    color:#788491;
+}
+/* end of intro section */
+
+/* BottomDivs */
+
+#bottomdivs {
+
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 19.5%;
+    width: 60%;
+    font-family: 'Ubuntu';
+   
+}
+#bottomdivs p{
+    font-size: 1.5rem;
+    padding-bottom: 20%;
+    color: #A5ACB6
+}
+
+
+
+
+#bottomdivs h2{
+    font-size: 2rem;
+    padding-bottom: 3%;
+    color: #116A67;
+}
+
+.div-image {
+    position: relative;
+    /* background-color: red; */
+    background-image: url("/resources/images/titanbin.png");
+    bottom: 300px;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
 
 

@@ -1,9 +1,33 @@
-# Iteration 4:
+# Iteration 5:
 ### **List of things done:**
 Brandon:
-- reimplement CloudSQL for login system
-- added dedicated bucket for each user
-- merged Ramiro's intro page to project
+- added REST API (get/post)
+
+## REST API
+Link: https://verdant-oven-330403.wl.r.appspot.com
+### /api/get
+    - Url Parameters:
+        - bucket = name of storage
+        - optional: filename = name of json file (without extension)
+    - Given bucket only: returns every json file inside bucket
+        - ex: /api/get?bucket=group7 
+    - Given both: returns specific file from bucket
+        - ex: /api/get?bucket=group7&filename=hello
+
+![image](https://user-images.githubusercontent.com/55907638/144702857-abafb795-1c91-4864-a8e8-c2577f77e672.png)
+![image](https://user-images.githubusercontent.com/55907638/144702988-78f363cf-a829-47a3-a66f-db114bb32fea.png)
+
+
+### /api/post
+    - Url Parameters:
+        - bucket = name of storage
+        - filename = name of json file (without extension)
+        - request body with json data
+    - Given all three, stores data as json file inside bucket in Cloud Storage
+        - ex: /api/post?bucket=group7&filename=hello
+        
+![image](https://user-images.githubusercontent.com/55907638/144702819-6c000121-f50c-447a-b4bd-72c115892047.png)
+![image](https://user-images.githubusercontent.com/55907638/144702843-18ce3cd8-3477-4403-bf50-3dba8137a6cb.png)
 
 ## **SETUP:**
 

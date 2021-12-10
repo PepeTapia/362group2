@@ -1,9 +1,4 @@
-<?php
-if (!isset($_SESSION))
-  {
-    session_start();
-  }
-?>
+
 
 <?php
 require './vendor/autoload.php';
@@ -31,7 +26,7 @@ class googleStorage{
 	function create_bucket($bucketName){
 		$storageClass = 'STANDARD';
 		$location = 'US';
-		$bucket = $this->storage->createBucket($bucketName, [
+		$this->storage->createBucket($bucketName, [
 			'storageClass' => $storageClass, 
 			'location' => $location
 		]);
@@ -39,10 +34,7 @@ class googleStorage{
 		// 	'encryption' => [
 		// 		'defaultKmsKeyName' => null,
 		// 	]
-		// ]);
-
-		// $this->bucketName = $bucketName;
-		
+		// ]);	
 	}
 	function get_bucket(){
 		return $this->bucketName;
@@ -66,12 +58,9 @@ class googleStorage{
 		$msg = sprintf('Downloaded gs://%s/%s to %s' . PHP_EOL, $this->bucketName, $objectName, basename($destination));
 		echo '<div class="msg">' . $msg . '</div>';
 	}
-
-	// }
 	function getUrl($objectName){
 		return 'https://storage.cloud.google.com/'. $this->bucketName . '/' . $objectName;
 	}
-
 	function list_objects(){
  #    	$bucketname = "titanbin.appspot.com";
  		#$bucketName = 'cloud-site-325604.appspot.com';
@@ -118,29 +107,38 @@ class googleStorage{
     	}
 
 	}
+	function post_upload($objectName, $data){
+		$bucket = $this->storage->bucket($this->bucketName);
+		$bucket->upload(NULL, [
+			'name' => $objectName
+		]);
+
+		file_put_contents("gs://{$this->bucketName}/{$objectName}", json_encode($data));
+
+		$msg = 'Uploaded ' . $objectName;
+
+		echo json_encode(array('message' => $msg));
+	}
+	function get_all_objects(){
+		$bucket = $this->storage->bucket($this->bucketName);
+		$object_array = $bucket->objects();
+		$items = array();
+
+		foreach ($object_array as $object) {
+			$filename = $object->name();
+			$data = json_decode(file_get_contents("gs://{$this->bucketName}/{$filename}"), true);
+			array_push($items, $data);
+		}
+		echo json_encode($items);
+	}
+	function get_object($fileName){
+		$data = json_decode(file_get_contents("gs://{$this->bucketName}/{$fileName}"), true);
+		echo json_encode($data);
+
+	}
 }
-// $query = "select * from session where id = '$user_name' limit 1";
-// $result = mysqli_query($con, $query);
 
-// ob_start();
-// include './login/login.php';
-// $output = ob_get_clean();
 
-$storage = new googleStorage();
-
-try {
-	$storage->create_bucket($_SESSION['user_id']);
-} catch (Exception $e){
-	echo "";
-}
-
-$storage->set_bucket($_SESSION['user_id']);
 
 ?>
 
-<!-- <!DOCTYPE html>
-<html>
-	<head>
-		<link type="text/css" rel="stylesheet" href="./resources/stylesheets/style-home.css"></link>
-	</head>
-</html> -->
