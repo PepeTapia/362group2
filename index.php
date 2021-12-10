@@ -43,6 +43,9 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
 		}
 		require './login/logout.php';
 		break;
+	case '/class.php':
+		require 'class.php';
+		break;
 	case '/api/get':
 		header('Access-Control-Allow-Origin: *');
 		header('Content-Type: application/json; charset=utf-8');
