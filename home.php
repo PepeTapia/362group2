@@ -21,6 +21,8 @@ if(isset($_POST['submit'])){
 <head>
 	<meta charset="UTF-8">
 	<title>Home</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
 	<link type="text/css" rel="stylesheet" href="./resources/stylesheets/style-home.css">
 	</link>
 	<link rel="stylesheet" href="./resources/stylesheets/styles.css">
