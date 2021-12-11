@@ -9,6 +9,7 @@ Ramiro:
 -  added a sidenav to navigate through the website once the user logged in 
 -  Debugged the code to make the new navbar fit with 0 issues. 
 -  Started work on PDF preview by trying to reuse the image preview code, but didn’t have time to finish.
+-  My work can be viewed on: https://github.com/PepeTapia/362group2/tree/Ramiro-Iteration5
 
 
 ### Results
