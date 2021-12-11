@@ -4,6 +4,13 @@ Brandon:
 - added REST API (get/post)
 - Merged Ramiro's and Erik's Code
 
+Ramiro:
+- Changed the old navigation bars on all the pages to make it consisten with the navigation bar found on the landing page.
+-  added a sidenav to navigate through the website once the user logged in 
+-  Debugged the code to make the new navbar fit with 0 issues. 
+-  Started work on PDF preview by trying to reuse the image preview code, but didn’t have time to finish.
+
+
 ### Results
 This is our final iteration. While we did not finish everything entirely, the product works and runs well.
 
